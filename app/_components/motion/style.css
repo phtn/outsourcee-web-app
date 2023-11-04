@@ -1,0 +1,11 @@
+circle,
+rect,
+line {
+	stroke-width: 16px;
+	stroke-linecap: round;
+	fill: transparent;
+}
+
+rect {
+	transform: skewX(20deg);
+}
