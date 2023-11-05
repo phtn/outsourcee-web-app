@@ -19,6 +19,7 @@ function getNextElement<T>(
 ) {
 	const nextIndex = (currentIndex + 1) % array.length // Calculate the next index with wrap-around
 	setState(nextIndex)
+	return nextIndex
 }
 
 export { map, toggleState, getNextElement }

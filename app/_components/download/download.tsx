@@ -5,6 +5,7 @@ import {
 	StoreImage,
 	StoreLink,
 	StorePanel,
+	Subtext,
 } from './styled'
 
 type LinkType = {
@@ -34,13 +35,13 @@ const links: LinkType[] = [
 const DownloadLinks = () => (
 	<DownloadPanel>
 		<DownloadTitle>Download the app.</DownloadTitle>
-		<div className='md:px-24 p-3 skew-x-[-16deg] bg-primary/10 backdrop-blur-sm border-l-8 border-secondary-foreground'>
+		<Subtext>
 			<div className='skew-x-[16deg]'>
 				<span className='md:text-[16px] font-medium text-center leading-snug text-xs text-zinc-500 dark:text-gray-300 '>
-					Now available on iOS, Android and Huawei phones.
+					Now available on iOS, Android and HarmonyOS.
 				</span>
 			</div>
-		</div>
+		</Subtext>
 
 		<StorePanel>
 			{links.map((item) => (

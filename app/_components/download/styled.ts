@@ -2,11 +2,19 @@ import tw from 'tailwind-styled-components'
 import Image from 'next/image'
 
 const DownloadPanel = tw.div`
-  z-30 flex flex-col md:items-center justify-center h-[600px] md:h-[700px] px-6
+  z-30 flex flex-col 
+  md:items-center justify-center 
+  py-28
+  px-6
+  border
 `
 
 const DownloadTitle = tw.h2`
   text-[2rem] ml-2 md:text-[4rem] font-extrabold text-primary-foreground z-10 
+`
+
+const Subtext = tw.div`
+  md:px-24 py-1 md:py-3 px-6 mx-2 skew-x-[-16deg] bg-primary/10 backdrop-blur-sm border-l-8 border-secondary-foreground
 `
 
 const StorePanel = tw.section`
@@ -19,6 +27,7 @@ const StorePanel = tw.section`
   gap-12
   items-center
   justify-center
+  z-50
 `
 
 const StoreImage = tw(Image)<{ src: string }>`
@@ -50,4 +59,11 @@ const StoreLink = tw.div`
   justify-center
 `
 
-export { DownloadPanel, DownloadTitle, StorePanel, StoreLink, StoreImage }
+export {
+	DownloadPanel,
+	DownloadTitle,
+	StorePanel,
+	StoreLink,
+	StoreImage,
+	Subtext,
+}

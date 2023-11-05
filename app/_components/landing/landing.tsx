@@ -9,7 +9,6 @@ import {
 	HeroSecondary,
 	PrimaryLabel,
 	SecondaryLabel,
-	FooterWave,
 } from './styled'
 import { ArrowDownCircleIcon } from 'lucide-react'
 import { ActionProps, LandingProps } from './types'
@@ -19,6 +18,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { getNextElement } from '@/app/_utils/helpers'
 import ScreenshotModule from '../screenshots'
 import DownloadLinks from '../download/download'
+import { WaveOne } from '../panels/styled'
 
 const Landing = ({ scrollToNext }: LandingProps) => {
 	return (
@@ -26,7 +26,7 @@ const Landing = ({ scrollToNext }: LandingProps) => {
 			<Hero />
 			<ScreenshotModule />
 			<DownloadLinks />
-			<FooterWave />
+			<WaveOne />
 		</LandingContainer>
 	)
 }

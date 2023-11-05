@@ -9,6 +9,7 @@ import {
 	useEffect,
 	useLayoutEffect,
 	useState,
+	useCallback,
 } from 'react'
 import tw from 'tailwind-styled-components'
 
@@ -24,7 +25,17 @@ type GridItemProps = {
 	originOffset: MutableRefObject<OriginOffset>
 }
 
-export function Grid({ delayPerPixel = 0.0008, numItems = 204 }) {
+const gridClass = `
+	bg-gradient-to-b from-background to-primary-foreground 
+	grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-[0.5px] 
+	w-full absolute overflow-hidden xl:h-[228vh] lg:h-[230vh]
+	`
+// xl:h-[240vh] lg:h-[220vh] md:h-[218vh]
+
+export function Grid() {
+	const { cells } = useDimensions()
+	const [length, setLength] = useState(cells)
+	const delayPerPixel = 0.0008
 	const originOffset = useRef({ top: 0, left: 0 })
 	const controls = useAnimation()
 	const { checked } = useToggleMode()
@@ -33,13 +44,22 @@ export function Grid({ delayPerPixel = 0.0008, numItems = 204 }) {
 		controls.start('visible')
 	}, [checked])
 
+	useEffect(() => {
+		setLength(cells)
+		console.log(cells)
+	}, [cells])
+
+	const RenderGridItems = useCallback(() => {
+		return <></>
+	}, [length, delayPerPixel, originOffset, controls, checked, cells])
+
 	return (
 		<motion.div
-			className={`bg-gradient-to-b from-background to-primary-foreground grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-[0.5px] w-full absolute overflow-hidden h-[calc(100vh + 1%)]`}
+			className={gridClass}
 			initial='hidden'
 			animate={controls}
 			variants={{}}>
-			{Array.from({ length: numItems }).map((_, i) => (
+			{Array.from({ length: 280 }).map((_, i) => (
 				<GridItem
 					key={i}
 					i={i}

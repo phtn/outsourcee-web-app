@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+	display: none;
+}
+
 /* foreground 2A338D hsl(235, 54%, 36%) */
 /* primary #38BDF8 hsl(198, 93%, 60%) */
 /* secondary #FFCB2B hsl(45, 100%, 58%) */

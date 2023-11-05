@@ -1,15 +1,20 @@
 import tw from 'tailwind-styled-components'
+/*
+xl:h-[2100px]
+  lg:h-[1900px]
+  md:h-[2000px]
+  h-[1700px]
 
+*/
 const LandingContainer = tw.div`
-  flex
   flex-col
-  h-full
   w-full
   bg-gradient-to-br
   from-slate-900
   to-slate-200
   transition-colors
   duration-1000
+  overflow-hidden
 `
 
 const HeroContainer = tw.div`
@@ -89,18 +94,21 @@ const ActionContainer = tw.section`
   backdrop-blur-sm
 `
 
-const FooterWave = tw.div`
-  z-10 
-  w-full 
-  h-[700px] 
-  mt-[-500px] 
-  bg-cover 
-  bg-[url('/svg/outsourcee-waves-v1.svg')]
-`
+/*
+
+xl:h-[1400px]
+  lg:h-[1600px]
+  md:h-[1600px]
+  h-[1600px]
+  xl:mt-[-400px]
+  lg:mt-[-360px]
+  md:mt-[-132px]
+  mt-[-200px]
+
+*/
 
 export {
 	ActionContainer,
-	FooterWave,
 	HeroContainer,
 	HeroContent,
 	HeroPrimary,
