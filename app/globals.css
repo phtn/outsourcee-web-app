@@ -6,6 +6,10 @@
 	display: none;
 }
 
+.mono {
+	color: #2a338d;
+}
+/* hsl(234, 100%, 31%) */
 /* foreground 2A338D hsl(235, 54%, 36%) */
 /* primary #38BDF8 hsl(198, 93%, 60%) */
 /* secondary #FFCB2B hsl(45, 100%, 58%) */
@@ -13,7 +17,7 @@
 @layer base {
 	:root {
 		--background: 0 0% 100%;
-		--foreground: 235 54% 36%;
+		--foreground: 234 100% 31%;
 
 		--card: 0 0% 100%;
 		--card-foreground: 222.2 84% 4.9%;

@@ -19,7 +19,7 @@ const Subtext = tw.div`
 
 const StorePanel = tw.section`
   md:pt-24
-  py-8
+  pt-20
   grid grid-cols-1
   md:grid-cols-3
   md:px-24

@@ -2,22 +2,26 @@ import { MoonStarIcon, SunIcon } from 'lucide-react'
 import tw from 'tailwind-styled-components'
 
 const NavContainer = tw.div`
-  h-10
   flex
   w-full
   items-center 
   justify-between
-  p-2
-  lg:p-10
+  px-6
+  pt-2
   absolute
-  backdrop-blur-[30%]
-  z-10
+  top-0
+  bg-gradient-to-b
+  from-background
+  to-transparent
+  backdrop-blur-md
+  z-50
 `
 
 const Brand = tw.section`
   flex
+  h-fit
   items-center
-  justify-between
+  justify-center
 `
 
 const BrandName = tw.h1`

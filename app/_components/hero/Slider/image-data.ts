@@ -1,4 +1,4 @@
-type ImageProps = {
+type ImageData = {
 	id: number
 	name: string
 	serviceType: string
@@ -6,13 +6,13 @@ type ImageProps = {
 	image: string
 }
 
-export const images: ImageProps[] = [
+export const images: ImageData[] = [
 	{
 		id: 0,
 		name: 'Ella',
 		serviceType: 'Wedding Planner',
 		stars: 746,
-		image: '/lifestyle/life-v1.jpg',
+		image: '/phones/ss-center.png',
 	},
 
 	{
@@ -20,28 +20,28 @@ export const images: ImageProps[] = [
 		name: 'Olivia P',
 		serviceType: 'Bookkeeper',
 		stars: 567,
-		image: '/lifestyle/life-v3.jpg',
+		image: '/phones/ss-center.png',
 	},
 	{
 		id: 2,
 		name: 'Sonia B',
 		serviceType: 'Property Consultant',
 		stars: 933,
-		image: '/lifestyle/life-v2.jpg',
+		image: '/phones/ss-center.png',
 	},
 	{
 		id: 3,
 		name: 'Jen',
 		serviceType: 'Math Tutor',
 		stars: 493,
-		image: '/lifestyle/life-v4.jpg',
+		image: '/phones/ss-center.png',
 	},
 	{
 		id: 4,
 		name: 'Marie',
 		serviceType: 'Running Instructor',
 		stars: 901,
-		image: '/lifestyle/life-v5.jpg',
+		image: '/phones/ss-center.png',
 	},
 
 	{
@@ -49,34 +49,34 @@ export const images: ImageProps[] = [
 		name: 'Stella',
 		serviceType: 'Social Media Specialist',
 		stars: 299,
-		image: '/lifestyle/life-v7.jpg',
+		image: '/phones/ss-center.png',
 	},
 	{
 		id: 6,
 		name: 'Christine',
 		serviceType: 'Product Designer',
 		stars: 791,
-		image: '/lifestyle/life-v8.jpg',
+		image: '/phones/ss-center.png',
 	},
 	{
 		id: 7,
 		name: 'Lea',
 		serviceType: 'Accountant',
 		stars: 328,
-		image: '/lifestyle/life-v9.jpg',
+		image: '/phones/ss-center.png',
 	},
 	{
 		id: 8,
 		name: 'Carla',
 		serviceType: 'Nail Specialist',
 		stars: 896,
-		image: '/lifestyle/life-v10.jpg',
+		image: '/phones/ss-center.png',
 	},
 	{
 		id: 9,
 		name: 'April',
 		serviceType: 'Massage Therapist',
 		stars: 458,
-		image: '/lifestyle/life-v6.jpg',
+		image: '/phones/ss-center.png',
 	},
 ]

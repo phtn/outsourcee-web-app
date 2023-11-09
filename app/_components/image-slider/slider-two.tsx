@@ -1,18 +1,9 @@
-import * as React from 'react'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from 'popmotion'
 import { images } from './image-data'
-import './styles.css'
 import { Button } from '@/components/ui/button'
-import {
-	ArrowLeft,
-	ArrowRight,
-	ChevronLeftIcon,
-	ChevronRightIcon,
-	DotIcon,
-	StarsIcon,
-} from 'lucide-react'
+import { ChevronLeftIcon, ChevronRightIcon, DotIcon } from 'lucide-react'
 
 const variants = {
 	enter: (direction: number) => {
@@ -47,7 +38,7 @@ const swipePower = (offset: number, velocity: number) => {
 	return Math.abs(offset) * velocity
 }
 
-const ImageSlider = () => {
+const SliderTwo = () => {
 	const [[page, direction], setPage] = useState([0, 0])
 
 	// We only have 3 images, but we paginate them absolutely (ie 1, 2, 3, 4, 5...) and
@@ -61,12 +52,12 @@ const ImageSlider = () => {
 	}
 
 	return (
-		<>
+		<div className='border border-sky-400 flex h-screen items-center justify-center'>
 			<AnimatePresence
 				initial={false}
 				custom={direction}>
 				<motion.img
-					className='xl:h-[360px] lg:h-[290px] md:h-[250px] md:rounded-xl absolute'
+					className='xl:h-[360px] lg:h-[290px] md:h-[250px] md:rounded-xl absolute z-30'
 					key={page}
 					src={images[imageIndex].image}
 					custom={direction}
@@ -92,7 +83,7 @@ const ImageSlider = () => {
 					}}
 				/>
 			</AnimatePresence>
-			<div className='flex flex-col xl:h-[350px] lg:h-[275px] py-2 items-stretch w-full justify-end px-0 md:px-6 xl:px-20'>
+			{/* <div className='flex flex-col xl:h-[350px] lg:h-[275px] py-2 items-stretch w-full justify-end px-0 md:px-6 xl:px-20'>
 				<div className='flex items-center justify-between'>
 					<Button
 						className='z-20 skew-x-[-16deg] rounded-sm'
@@ -128,9 +119,9 @@ const ImageSlider = () => {
 						</div>
 					</Button>
 				</div>
-			</div>
-		</>
+			</div> */}
+		</div>
 	)
 }
 
-export default ImageSlider
+export default SliderTwo

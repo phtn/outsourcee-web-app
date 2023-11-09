@@ -1,5 +1,8 @@
 import tw from 'tailwind-styled-components'
 import { HeaderProps } from './types'
+import { ReactElement, ReactNode } from 'react'
+import { LucideIcon } from 'lucide-react'
+import { TinyCalloutProps } from '../panels/types'
 
 const HeaderContainer = tw.div`
   h-fit
@@ -33,16 +36,17 @@ const SecondaryTitle = tw.h2`
 `
 
 const TertiaryTitle = tw.h2`
-  text-[2rem] ml-2 md:text-[4rem] 
+  text-[2.5rem] ml-2 md:text-[4rem] 
   font-extrabold text-foreground 
+`
 
-`
 const TertiarySubtextContainer = tw.div`
-  w-[400px] py-2 md:py-4 mx-2 px-4
+  lg:w-[500px] md:w-[650px] py-2 md:py-4 mx-2 px-4
   skew-x-[-16deg] bg-background 
-  border-l-8 
   border-secondary-foreground
+  border-l-8 
 `
+
 const TertiarySubtext = tw.h2`
   md:text-[16px] font-medium 
   text-sm text-zinc-500 
@@ -82,4 +86,41 @@ const Tertiary = ({ title, subtext }: HeaderProps) => (
 	</HeaderContainer>
 )
 
-export { Primary, Secondary, Tertiary }
+const TinyContainer = tw.div`
+  flex items-center justify-center
+	w-[180px] rounded-lg
+`
+const IconContainer = tw.div`
+  flex items-center justify-center h-12 w-16 rounded-0 
+	bg-black/5 backdrop-blur-lg mono 
+`
+
+const LabelContainer = tw.div`
+  flex flex-col justify-center tracking-wider bg-black/5 w-[110px] h-12
+`
+
+const TextOne = tw.span`
+	font-extrabold
+`
+const TextTwo = tw.span`
+	text-sm
+	mt-[-6px] text-foreground/80
+	font-medium
+	ml-[1px]
+`
+
+const TinyCallout = ({ Icon, text1, text2 }: TinyCalloutProps) => (
+	<TinyContainer>
+		<IconContainer>
+			<Icon className='' />
+		</IconContainer>
+		<LabelContainer>
+			<div className='flex flex-col'>
+				<TextOne>{text1}</TextOne>
+				<TextTwo>{text2}</TextTwo>
+			</div>
+		</LabelContainer>
+	</TinyContainer>
+)
+
+export { Primary, Secondary, Tertiary, TinyCallout }

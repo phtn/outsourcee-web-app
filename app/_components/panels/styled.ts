@@ -13,10 +13,12 @@ const WaveOne = tw.div`
 `
 
 const PanelContainer = tw.div`
-  h-[700px] relative bg-primary-foreground z-40
-  flex
+  md:h-[700px] relative bg-primary-foreground z-40
+  lg:px-24
   md:grid
-  md:grid-cols-3
+  lg:grid-cols-2
+  grid-cols-1
+  md:gap-3
 `
 
 export { PanelContainer, WaveOne }

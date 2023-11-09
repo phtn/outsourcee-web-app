@@ -27,8 +27,8 @@ type GridItemProps = {
 
 const gridClass = `
 	bg-gradient-to-b from-background to-primary-foreground 
-	grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 gap-[0.5px] 
-	w-full absolute overflow-hidden xl:h-[228vh] lg:h-[230vh]
+	grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 
+	gap-[0.5px] h-screen overflow-hidden
 	`
 // xl:h-[240vh] lg:h-[220vh] md:h-[218vh]
 

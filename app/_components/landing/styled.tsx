@@ -10,11 +10,21 @@ const LandingContainer = tw.div`
   flex-col
   w-full
   bg-gradient-to-br
-  from-slate-900
-  to-slate-200
+  
   transition-colors
   duration-1000
   overflow-hidden
+  absolute 
+  top-0
+  z-30
+`
+
+const LandingContent = tw.div`
+  bg-gradient-to-b
+  from-transparent
+  to-background
+  overflow-scroll
+  h-screen
 `
 
 const HeroContainer = tw.div`
@@ -114,6 +124,7 @@ export {
 	HeroPrimary,
 	HeroLabelContainer,
 	HeroSecondary,
+	LandingContent,
 	LandingContainer,
 	PrimaryLabel,
 	SecondaryLabel,

@@ -1,18 +1,10 @@
-import * as React from 'react'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from 'popmotion'
 import { images } from './image-data'
-import './styles.css'
 import { Button } from '@/components/ui/button'
-import {
-	ArrowLeft,
-	ArrowRight,
-	ChevronLeftIcon,
-	ChevronRightIcon,
-	DotIcon,
-	StarsIcon,
-} from 'lucide-react'
+import { ChevronLeftIcon, ChevronRightIcon, DotIcon } from 'lucide-react'
+import { SliderContainer } from './styled'
 
 const variants = {
 	enter: (direction: number) => {
@@ -29,7 +21,7 @@ const variants = {
 	exit: (direction: number) => {
 		return {
 			zIndex: 0,
-			x: direction < 0 ? 400 : -400,
+			x: direction < 0 ? 100 : -100,
 			scale: 0.5,
 			opacity: 0,
 		}
@@ -61,12 +53,12 @@ const ImageSlider = () => {
 	}
 
 	return (
-		<>
+		<SliderContainer>
 			<AnimatePresence
 				initial={false}
 				custom={direction}>
 				<motion.img
-					className='xl:h-[360px] lg:h-[290px] md:h-[250px] md:rounded-xl absolute'
+					className='xl:h-[600px] rounded-[54px] lg:h-[290px] md:h-[250px] relative z-30 bg-transparent/50 transition-shadow shadow-xl group-hover:shadow-[0_28px_42px_-15px_rgba(0,0,0,0.5)] group-hover:absolute '
 					key={page}
 					src={images[imageIndex].image}
 					custom={direction}
@@ -92,7 +84,7 @@ const ImageSlider = () => {
 					}}
 				/>
 			</AnimatePresence>
-			<div className='flex flex-col xl:h-[350px] lg:h-[275px] py-2 items-stretch w-full justify-end px-0 md:px-6 xl:px-20'>
+			{/* <div className='flex flex-col xl:h-[350px] lg:h-[275px] py-2 items-stretch w-full justify-end px-0 md:px-6 xl:px-20'>
 				<div className='flex items-center justify-between'>
 					<Button
 						className='z-20 skew-x-[-16deg] rounded-sm'
@@ -128,8 +120,8 @@ const ImageSlider = () => {
 						</div>
 					</Button>
 				</div>
-			</div>
-		</>
+			</div> */}
+		</SliderContainer>
 	)
 }
 

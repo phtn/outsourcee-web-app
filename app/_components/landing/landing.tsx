@@ -9,6 +9,7 @@ import {
 	HeroSecondary,
 	PrimaryLabel,
 	SecondaryLabel,
+	LandingContent,
 } from './styled'
 import { ArrowDownCircleIcon } from 'lucide-react'
 import { ActionProps, LandingProps } from './types'
@@ -19,14 +20,20 @@ import { getNextElement } from '@/app/_utils/helpers'
 import ScreenshotModule from '../screenshots'
 import DownloadLinks from '../download/download'
 import { WaveOne } from '../panels/styled'
+import { HeroTwo } from '../hero/heroTwo'
+import FirstPanel from '../panels/first-panel'
 
 const Landing = ({ scrollToNext }: LandingProps) => {
 	return (
 		<LandingContainer>
-			<Hero />
-			<ScreenshotModule />
-			<DownloadLinks />
-			<WaveOne />
+			<LandingContent>
+				<HeroTwo />
+				<FirstPanel />
+			</LandingContent>
+			{/* <ScreenshotModule /> */}
+			{/* <Hero /> */}
+			{/* <DownloadLinks /> */}
+			{/* <WaveOne /> */}
 		</LandingContainer>
 	)
 }
@@ -34,7 +41,6 @@ const Landing = ({ scrollToNext }: LandingProps) => {
 const Hero = () => {
 	return (
 		<HeroContainer>
-			<Grid />
 			<HeroContent>
 				<PrimaryModule />
 				<SecondaryModule />
@@ -43,7 +49,11 @@ const Hero = () => {
 	)
 }
 
-const headlines = ['Simplify your workload.', 'Delegate with confidence']
+const headlines = [
+	'Achieve more.',
+	'Simplify your workload.',
+	'Delegate with confidence.',
+]
 
 const PrimaryModule = () => {
 	const [index, setIndex] = useState(0)

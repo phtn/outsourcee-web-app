@@ -37,8 +37,8 @@ const DownloadLinks = () => (
 		<DownloadTitle>Download the app.</DownloadTitle>
 		<Subtext>
 			<div className='skew-x-[16deg]'>
-				<span className='md:text-[16px] font-medium text-center leading-snug text-xs text-zinc-500 dark:text-gray-300 '>
-					Now available on iOS, Android and HarmonyOS.
+				<span className='md:text-[16px] font-medium text-center leading-[-4px] text-xs text-zinc-500 dark:text-gray-300 '>
+					Now available on iOS, Android, and HarmonyOS.
 				</span>
 			</div>
 		</Subtext>

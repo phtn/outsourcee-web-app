@@ -7,16 +7,24 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { useCallback } from 'react'
 import { map } from '@/app/_utils/helpers'
+import Image from 'next/image'
 
 const Navbar = () => (
 	<NavContainer>
 		<motion.div
+			className='z-50'
 			initial={{ scale: 0 }}
 			animate={{ scale: 1 }}
 			transition={{ duration: 0.5, delay: 1.1 }}>
-			<Brand>
-				<BrandName>outsourcee</BrandName>
-			</Brand>
+			{/* <Brand> */}
+			<Image
+				alt='logo'
+				src='/logo/Outsourcee_Logo.png'
+				height={400}
+				width={400}
+				className='h-16 w-auto '
+			/>
+			{/* </Brand> */}
 		</motion.div>
 		<motion.div
 			initial={{ scale: 0 }}

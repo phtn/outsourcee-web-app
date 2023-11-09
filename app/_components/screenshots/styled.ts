@@ -7,10 +7,6 @@ const ScreenShots = tw.div`
   grid-cols-1
   md:grid-cols-2
   lg:grid-cols-6
-  bg-gradient-to-br
-  from-background
-  to-primary-foreground
-  border
 `
 
 const ColLeft = tw.div`
