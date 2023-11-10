@@ -46,12 +46,7 @@ export function Grid() {
 
 	useEffect(() => {
 		setLength(cells)
-		console.log(cells)
 	}, [cells])
-
-	const RenderGridItems = useCallback(() => {
-		return <></>
-	}, [length, delayPerPixel, originOffset, controls, checked, cells])
 
 	return (
 		<motion.div
@@ -59,7 +54,7 @@ export function Grid() {
 			initial='hidden'
 			animate={controls}
 			variants={{}}>
-			{Array.from({ length: 280 }).map((_, i) => (
+			{Array.from({ length: 100 }).map((_, i) => (
 				<GridItem
 					key={i}
 					i={i}
@@ -105,7 +100,7 @@ function GridItem({
 
 	return (
 		<Box
-			className='col-span-1 h-[80px] sm:h-[100px] md:h-[96px] lg:h-[105px] xl:h-[120px] bg-background rounded-[2px] transition-all duration-1000'
+			className='col-span-1 h-[64px] sm:h-[100px] md:h-[96px] lg:h-[105px] xl:h-[120px] bg-background rounded-[2px] transition-all duration-1000'
 			ref={ref}
 			variants={itemVariants}
 			custom={delayRef}

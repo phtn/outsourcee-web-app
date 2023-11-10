@@ -48,7 +48,7 @@ const DarkLogo = () => (
 		src='/logo/Outsourcee_Logo_white.png'
 		height={400}
 		width={400}
-		className='h-16 w-auto '
+		className='md:h-16 h-12 w-auto '
 	/>
 )
 
@@ -58,7 +58,7 @@ const LightLogo = () => (
 		src='/logo/Outsourcee_Logo.png'
 		height={400}
 		width={400}
-		className='h-16 w-auto '
+		className='md:h-16 h-12 w-auto '
 	/>
 )
 

@@ -47,6 +47,7 @@
 
 		--radius: 0.5rem;
 	}
+	/* hsl(234, 100%, 31%) */
 
 	.dark {
 		--background: 222.2 84% 4.9%;
@@ -58,7 +59,7 @@
 		--popover: 222.2 84% 4.9%;
 		--popover-foreground: 210 40% 98%;
 
-		--primary: 210 40% 98%;
+		--primary: 234 100% 31%;
 		--primary-foreground: 198 93% 60%;
 
 		--secondary: 217.2 32.6% 17.5%;

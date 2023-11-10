@@ -32,15 +32,18 @@ const HeroTwo = () => (
 
 const Primary = () => {
 	const [index, setIndex] = useState(0)
+	const [count, setCount] = useState(0)
 
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			getNextElement(headlines, index, setIndex)
+			setCount((prev) => prev + 1)
 		}, 7000)
+		console.log(count)
 		return () => {
 			clearTimeout(timeout)
 		}
-	}, [index])
+	}, [index, count])
 
 	const Headline = useCallback(
 		() => <HeadlineContent headline={headlines[index].headline} />,
@@ -48,17 +51,17 @@ const Primary = () => {
 	)
 
 	return (
-		<motion.div
-			className='z-20 flex'
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			transition={{ duration: 0.7, delay: 1.6, ease: 'easeInOut' }}>
-			<HeroPrimary>
+		<HeroPrimary>
+			<motion.div
+				// className='z-20 flex'
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 0.7, delay: 1.6, ease: 'easeInOut' }}>
 				<PrimaryContent>
 					<motion.div
 						key={index}
-						initial={{ y: 10, opacity: 0, scaleX: 0.97 }}
-						animate={{ y: 0, opacity: 1, scaleX: 1 }}
+						initial={{ x: 10, opacity: 0, scaleX: 0.97 }}
+						animate={{ x: 0, opacity: 1, scaleX: 1 }}
 						transition={{
 							duration: 0.55,
 							ease: 'easeInOut',
@@ -80,8 +83,8 @@ const Primary = () => {
 					</motion.div>
 					<DownloadStore />
 				</PrimaryContent>
-			</HeroPrimary>
-		</motion.div>
+			</motion.div>
+		</HeroPrimary>
 	)
 }
 
@@ -121,17 +124,17 @@ const stores: LinkType[] = [
 	{
 		title: 'app-store',
 		image: `/images/app-store-v4.png`,
-		link: '/',
+		link: '/app-store',
 	},
 	{
 		title: 'play-store',
 		image: `/images/play-store-v4.png`,
-		link: '/',
+		link: '/play-store',
 	},
 	{
 		title: 'app-gallery',
 		image: `/images/app-gallery-v4.png`,
-		link: '/',
+		link: '/app-gallery',
 	},
 ]
 

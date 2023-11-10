@@ -21,15 +21,16 @@ const HeroPrimary = tw.div`
 const PrimaryContent = tw.div`
   flex flex-col justify-evenly h-[400px] 
   px-8 md:pl-20 lg:pl-32 lg:pr-14 z-40
+  w-fit
 `
 const HeadlineText = tw.h1`
-  text-[2.5rem] md:text-[3rem] tracking-wide leading-[3rem] font-bold 
-
+  text-[2rem] md:text-[3rem] md:leading-[3rem] tracking-wide leading-[2rem] font-bold 
 `
 const HeadlineContainer = tw.div`
   flex
-  h-[100px]
-  w-[400px]
+  md:h-[100px]
+  h-[72px]
+  md:w-[400px]
 `
 
 const HeadlineContent = ({ headline }: { headline: string }) => (
@@ -39,11 +40,11 @@ const HeadlineContent = ({ headline }: { headline: string }) => (
 )
 
 const SubtextContainer = tw.div`
-  flex border-l-8 py-2 px-4 ml-[-18px]
+  flex border-l-8 border-secondary-foreground py-2 px-4 ml-[-18px] h-[72px]
 `
 const SubtextContent = tw.h2`
-  text-[0.75rem] md:text-[1rem] text-foreground/50 
-  dark:text-foreground/20
+  text-[0.75rem] md:text-sm 
+  text-muted-foreground
   font-normal tracking-wide 
 `
 
@@ -54,7 +55,7 @@ const Subtext = ({ subtext }: { subtext: string }) => (
 )
 
 const StoreContainer = tw.div`
-  grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-1 md:pr-4
+  grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-8 md:gap-1 md:pr-4
 `
 
 const StoreContent = tw.div`
@@ -76,8 +77,9 @@ const StoreContent = tw.div`
   items-center
   justify-center
   w-fit
-  md:px-4
-  px-3
+  lg:px-4
+  md:px-2
+  px-2
 
 `
 
@@ -104,11 +106,14 @@ const WaveOne = tw.div`
   w-screen 
   h-full
   xl:bg-contain
-  bg-cover
+  bg-contain
   bg-no-repeat
   bg-[url('/svg/outsourcee-waves-v2.svg')]
   absolute
-  top-[calc(100vh-270px)]
+  xl:top-[calc(100vh-270px)]
+  lg:top-[calc(100vh-200px)]
+  md:top-[calc(100vh-164px)]
+  top-[calc(100vh-80px)]
   xl:mb-[-65px]
 `
 

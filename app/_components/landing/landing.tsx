@@ -22,13 +22,21 @@ import DownloadLinks from '../download/download'
 import { WaveOne } from '../panels/styled'
 import { HeroTwo } from '../hero/heroTwo'
 import FirstPanel from '../panels/first-panel'
+import Features from '../features/features'
+import { features } from '../features/features-data'
 
 const Landing = ({ scrollToNext }: LandingProps) => {
+	const headerProps = { tag: 'discover', title: 'Top Features' }
 	return (
 		<LandingContainer>
 			<LandingContent>
 				<HeroTwo />
-				<FirstPanel />
+				<Features
+					headerProps={headerProps}
+					features={features}
+				/>
+
+				{/* <FirstPanel /> */}
 			</LandingContent>
 			{/* <ScreenshotModule /> */}
 			{/* <Hero /> */}
@@ -42,7 +50,7 @@ const Hero = () => {
 	return (
 		<HeroContainer>
 			<HeroContent>
-				<PrimaryModule />
+				{/* <PrimaryModule /> */}
 				<SecondaryModule />
 			</HeroContent>
 		</HeroContainer>
