@@ -9,6 +9,7 @@
 .mono {
 	color: #2a338d;
 }
+/* hsl(234, 100%, 98%) */
 /* hsl(234, 100%, 31%) */
 /* foreground 2A338D hsl(235, 54%, 36%) */
 /* primary #38BDF8 hsl(198, 93%, 60%) */
@@ -49,7 +50,7 @@
 
 	.dark {
 		--background: 222.2 84% 4.9%;
-		--foreground: 210 40% 98%;
+		--foreground: 234, 100%, 95%;
 
 		--card: 222.2 84% 4.9%;
 		--card-foreground: 210 40% 98%;

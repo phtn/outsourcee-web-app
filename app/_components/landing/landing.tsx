@@ -70,7 +70,7 @@ const PrimaryModule = () => {
 
 	const Headline = useCallback(() => {
 		return <PrimaryLabel>{headlines[index]}</PrimaryLabel>
-	}, [index])
+	}, [index, headlines])
 
 	return (
 		<motion.div

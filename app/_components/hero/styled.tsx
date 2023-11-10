@@ -12,6 +12,7 @@ const HeroContent = tw.div`
   justify-center
   md:grid
   md:grid-cols-2
+  grid-cols-1
 `
 
 const HeroPrimary = tw.div`
@@ -22,13 +23,16 @@ const PrimaryContent = tw.div`
   px-8 md:pl-20 lg:pl-32 lg:pr-14 z-40
 `
 const HeadlineText = tw.h1`
-  text-[3rem] tracking-wide leading-[3rem] font-bold 
+  text-[2.5rem] md:text-[3rem] tracking-wide leading-[3rem] font-bold 
+
 `
 const HeadlineContainer = tw.div`
   flex
+  h-[100px]
+  w-[400px]
 `
 
-const Headline = ({ headline }: { headline: string }) => (
+const HeadlineContent = ({ headline }: { headline: string }) => (
 	<HeadlineContainer>
 		<HeadlineText>{headline}</HeadlineText>
 	</HeadlineContainer>
@@ -38,7 +42,8 @@ const SubtextContainer = tw.div`
   flex border-l-8 py-2 px-4 ml-[-18px]
 `
 const SubtextContent = tw.h2`
-  text-[0.75rem] md:text-[1rem] text-slate-400 
+  text-[0.75rem] md:text-[1rem] text-foreground/50 
+  dark:text-foreground/20
   font-normal tracking-wide 
 `
 
@@ -49,7 +54,7 @@ const Subtext = ({ subtext }: { subtext: string }) => (
 )
 
 const StoreContainer = tw.div`
-  grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6
+  grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-1 md:pr-4
 `
 
 const StoreContent = tw.div`
@@ -61,10 +66,9 @@ const StoreContent = tw.div`
   bg-no-repeat
   shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] 
   bg-black
-  md:dark:border-[1px]
-  dark:border-[0.5px]
-  border-bg-primary/5
-  hover:border-primary-foreground
+  border
+  dark:border-[#0b4454]
+  dark:hover:border-primary-foreground
   hover:scale-105
   transition-all
   duration-300
@@ -74,6 +78,7 @@ const StoreContent = tw.div`
   w-fit
   md:px-4
   px-3
+
 `
 
 const StoreImage = tw(Image)<ImageProps>`
@@ -88,10 +93,14 @@ const StoreItem = (props: ImageProps) => (
 )
 
 const HeroSecondary = tw.div`
-  h-screen
+  md:h-screen
+  col-span-1
+  hidden
+  md:flex
 `
 
 const WaveOne = tw.div`
+  z-50
   w-screen 
   h-full
   xl:bg-contain
@@ -107,13 +116,14 @@ const FooterContent = tw.div`
   relative flex items-end justify-end h-[270px] p-3 z-50
 `
 const FooterItem = tw.h3`
-  text-sm text-muted
+  text-xs text-muted dark:text-foreground/20 font-medium
+  tracking-wide
 `
 
 export {
 	FooterContent,
 	FooterItem,
-	Headline,
+	HeadlineContent,
 	HeroContainer,
 	HeroContent,
 	HeroPrimary,
