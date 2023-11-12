@@ -1,32 +1,19 @@
-import Image from 'next/image'
-import {
-	FeatureHeader,
-	FeaturesContainer,
-	FeatureItem,
-	FeatureHeaderGap,
-	FeatureGridContainer,
-} from './styled'
-import { features } from './features-data'
+import { Header, Container, Item, HeaderGap, GridContainer } from './styled'
 import { FeatureItemProps, FeatureProps } from './types'
 
 const Features = ({ headerProps, features }: FeatureProps) => (
-	<FeaturesContainer>
-		<FeatureHeader
-			{...headerProps}
-			tag='discover'
-			title='Top Features'
-		/>
-
-		<FeatureHeaderGap />
-		<FeatureGridContainer>
+	<Container>
+		<Header {...headerProps} />
+		<HeaderGap />
+		<GridContainer>
 			{features.map((feature: FeatureItemProps) => (
-				<FeatureItem
+				<Item
 					key={feature.id}
 					{...feature}
 				/>
 			))}
-		</FeatureGridContainer>
-	</FeaturesContainer>
+		</GridContainer>
+	</Container>
 )
 
 export default Features

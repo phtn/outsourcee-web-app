@@ -4,7 +4,7 @@ import { toggleState } from '../helpers'
 
 const useToggleMode = () => {
 	const { setTheme } = useTheme()
-	const [checked, setChecked] = useState(true)
+	const [checked, setChecked] = useState(false)
 
 	const toggleMode = () => toggleState(setChecked)
 

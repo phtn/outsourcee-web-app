@@ -14,13 +14,13 @@ import {
 	WaveOne,
 } from './styled'
 import ImageSlider from './Slider/image-slider'
-import { motion, stagger, useAnimate, useTime } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { headlines } from './headline-data'
 import { useCallback, useEffect, useState } from 'react'
 import { getNextElement } from '@/app/_utils/helpers'
 import { easeInOut } from 'popmotion'
 
-const HeroTwo = () => (
+const Hero = () => (
 	<HeroContainer>
 		<HeroContent>
 			<Primary />
@@ -39,7 +39,6 @@ const Primary = () => {
 			getNextElement(headlines, index, setIndex)
 			setCount((prev) => prev + 1)
 		}, 7000)
-		console.log(count)
 		return () => {
 			clearTimeout(timeout)
 		}
@@ -146,6 +145,7 @@ const DownloadStore = () => (
 		<StoreContainer>
 			{stores.map((item, index) => (
 				<Link
+					className='flex items-center justify-center md:justify-start'
 					key={item.link}
 					href={item.link}>
 					<StoreItem
@@ -160,4 +160,4 @@ const DownloadStore = () => (
 	</motion.div>
 )
 
-export { HeroTwo }
+export { Hero }

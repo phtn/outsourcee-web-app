@@ -13,28 +13,26 @@ import {
 } from './styled'
 import { ArrowDownCircleIcon } from 'lucide-react'
 import { ActionProps, LandingProps } from './types'
-import { Grid } from '../motion/grid'
 import { motion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
 import { getNextElement } from '@/app/_utils/helpers'
-import ScreenshotModule from '../screenshots'
-import DownloadLinks from '../download/download'
-import { WaveOne } from '../panels/styled'
-import { HeroTwo } from '../hero/heroTwo'
+import { Hero } from '../hero/Hero'
 import FirstPanel from '../panels/first-panel'
 import Features from '../features/features'
 import { features } from '../features/features-data'
+import Highlight from '../highlight/highlight'
 
 const Landing = ({ scrollToNext }: LandingProps) => {
 	const headerProps = { tag: 'discover', title: 'Top Features' }
 	return (
 		<LandingContainer>
 			<LandingContent>
-				<HeroTwo />
+				<Hero />
 				<Features
 					headerProps={headerProps}
 					features={features}
 				/>
+				<Highlight />
 
 				{/* <FirstPanel /> */}
 			</LandingContent>
@@ -43,17 +41,6 @@ const Landing = ({ scrollToNext }: LandingProps) => {
 			{/* <DownloadLinks /> */}
 			{/* <WaveOne /> */}
 		</LandingContainer>
-	)
-}
-
-const Hero = () => {
-	return (
-		<HeroContainer>
-			<HeroContent>
-				{/* <PrimaryModule /> */}
-				<SecondaryModule />
-			</HeroContent>
-		</HeroContainer>
 	)
 }
 

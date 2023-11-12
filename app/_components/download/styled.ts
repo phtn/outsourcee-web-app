@@ -28,6 +28,7 @@ const StorePanel = tw.section`
   items-center
   justify-center
   z-50
+  border
 `
 
 const StoreImage = tw(Image)<{ src: string }>`

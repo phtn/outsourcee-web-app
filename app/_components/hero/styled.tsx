@@ -6,31 +6,33 @@ const HeroContainer = tw.div`
 `
 
 const HeroContent = tw.div`
-  h-screen
+  h-[calc(100vh-200px)]
+  md:h-screen
   z-20
   flex
   justify-center
   md:grid
   md:grid-cols-2
-  grid-cols-1
 `
 
 const HeroPrimary = tw.div`
   flex items-center justify-center pb-16
 `
 const PrimaryContent = tw.div`
-  flex flex-col justify-evenly h-[400px] 
-  px-8 md:pl-20 lg:pl-32 lg:pr-14 z-40
+  flex flex-col justify-evenly h-[400px] md:h-[450px] 
+  px-8 sm:px-24 lg:pl-32 lg:pr-14 z-40
   w-fit
 `
 const HeadlineText = tw.h1`
-  text-[2rem] md:text-[3rem] md:leading-[3rem] tracking-wide leading-[2rem] font-bold 
+  text-[2rem] sm:text-[2.5rem] md:leading-[3rem] 
+  tracking-wide leading-[2rem] font-bold 
+  sm:w-96
 `
 const HeadlineContainer = tw.div`
   flex
-  md:h-[100px]
+  md:h-fit
   h-[72px]
-  md:w-[400px]
+  lg:w-[400px]
 `
 
 const HeadlineContent = ({ headline }: { headline: string }) => (
@@ -40,10 +42,10 @@ const HeadlineContent = ({ headline }: { headline: string }) => (
 )
 
 const SubtextContainer = tw.div`
-  flex border-l-8 border-secondary-foreground py-2 px-4 ml-[-18px] h-[72px]
+  flex items-center border-l-8 border-secondary-foreground py-2 px-4 ml-[-18px] h-[72px]
 `
 const SubtextContent = tw.h2`
-  text-[0.75rem] md:text-sm 
+  text-[0.75rem] sm:text-sm 
   text-muted-foreground
   font-normal tracking-wide 
 `
@@ -55,7 +57,7 @@ const Subtext = ({ subtext }: { subtext: string }) => (
 )
 
 const StoreContainer = tw.div`
-  grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-8 md:gap-1 md:pr-4
+  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 gap-x-2 gap-y-4 md:gap-y-4 lg:gap-y-6 sm:mr-8
 `
 
 const StoreContent = tw.div`
@@ -77,14 +79,15 @@ const StoreContent = tw.div`
   items-center
   justify-center
   w-fit
-  lg:px-4
+  xl:px-4
   md:px-2
   px-2
 
 `
 
 const StoreImage = tw(Image)<ImageProps>`
-  h-8
+  xl:h-fit
+  h-10
   w-auto
 `
 
