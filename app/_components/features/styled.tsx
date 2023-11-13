@@ -7,57 +7,8 @@ const Container = tw.div`
 	py-16
 `
 
-const HeaderContainer = tw.div`
-  w-full h-fit flex items-center justify-center
-`
-
-const HeaderContent = tw.div`
-  w-fit flex flex-col items-center justify-center h-full
-`
-
-const HeaderTagContainer = tw.div`
-  bg-primary-foreground h-fit w-[150px] px-3 py-[2px] 
-  flex items-center justify-center rounded-[2px]
-  shadow-xl shadow-[#54c8e8]/30
-`
-
-const HeaderTag = tw.h2`
-  text-white font-extrabold text-[0.64rem] 
-  uppercase tracking-[2.5px] py-1
-`
-
-const HeaderTitleContainer = tw.div`
-  h-[120px] flex items-center justify-center
-`
-
-const HeaderTitle = tw.h2`
-  text-[2.5rem] font-light
-`
-
-const HeaderSeparator = tw.div`
-  w-[140px] border-b-4 rounded-full border-secondary-foreground/70
-`
-
-const Header = ({ tag, title }: FeatureHeaderProps) => (
-	<HeaderContainer>
-		<HeaderContent>
-			<HeaderTagContainer>
-				<HeaderTag>{tag}</HeaderTag>
-			</HeaderTagContainer>
-			<HeaderTitleContainer>
-				<HeaderTitle>{title}</HeaderTitle>
-			</HeaderTitleContainer>
-			<HeaderSeparator />
-		</HeaderContent>
-	</HeaderContainer>
-)
-
-const HeaderGap = tw.div`
-  h-[75px]
-`
-
 const GridContainer = tw.div`
-  flex flex-col md:h-fit md:grid md:grid-cols-2 lg:grid-cols-3 px-6 md:px-10 lg:px-24
+  flex flex-col sm:grid sm:grid-cols-2 md:h-fit md:grid md:grid-cols-2 lg:grid-cols-3 px-6 md:px-10 lg:px-24
 `
 
 // Feature Item
@@ -107,7 +58,7 @@ const Item = ({ id, title, description, src }: FeatureItemProps) => (
 					src={src}
 					height={100}
 					width={100}
-					className='h-10 w-10 md:h-16 md:w-16 text-primary-foreground'
+					className='h-8 w-8 sm:h-9 sm:w-9 md:h-16 md:w-16 text-primary-foreground'
 				/>
 			</FeatureIconContainer>
 		</FeatureItemContent>
@@ -122,4 +73,4 @@ const Item = ({ id, title, description, src }: FeatureItemProps) => (
 	</FeatureItemContainer>
 )
 
-export { Container, Header, HeaderGap, GridContainer, Item }
+export { Container, GridContainer, Item }

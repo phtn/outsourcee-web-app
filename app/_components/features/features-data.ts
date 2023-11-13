@@ -33,7 +33,7 @@ const features: FeatureItemProps[] = [
 		id: 5,
 		title: 'Available Nationwide',
 		description:
-			'Outsourcee is available all over the Philippines. Book an appointment whereever you are.',
+			'Outsourcee is available all over the Philippines. Book an appointment wherever you are.',
 		src: '/icons/global-icon.svg',
 	},
 	{

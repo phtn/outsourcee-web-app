@@ -1,4 +1,5 @@
-import { Header, Container, Item, HeaderGap, GridContainer } from './styled'
+import { Header, HeaderGap } from '../header'
+import { Container, Item, GridContainer } from './styled'
 import { FeatureItemProps, FeatureProps } from './types'
 
 const Features = ({ headerProps, features }: FeatureProps) => (

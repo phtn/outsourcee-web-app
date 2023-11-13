@@ -58,7 +58,7 @@ const ImageSlider = () => {
 				initial={false}
 				custom={direction}>
 				<motion.img
-					className='xl:h-[600px] xl:rounded-[54px] lg:h-[500px] lg:rounded-[42px] h-[450px] md:rounded-[38px] z-30 bg-transparent/50 dark:bg-primary-foreground/100 transition-shadow shadow-xl group-hover:shadow-[0_28px_42px_-15px_rgba(0,0,0,0.5)] group-hover:absolute '
+					className='h-[650px] rounded-[56px] xl:h-[600px] xl:rounded-[54px] md:h-[500px] md:rounded-[44px] lg:h-[550px] lg:rounded-[48px]  z-30 bg-primary-foreground/100 transition-shadow shadow-xl group-hover:shadow-[0_28px_42px_-15px_rgba(0,0,0,0.5)] group-hover:absolute '
 					key={page}
 					src={images[imageIndex].image}
 					custom={direction}

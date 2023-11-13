@@ -6,17 +6,18 @@ const HeroContainer = tw.div`
 `
 
 const HeroContent = tw.div`
-  h-[calc(100vh-200px)]
+  h-fit
   md:h-screen
   z-20
-  flex
   justify-center
-  md:grid
+  grid
   md:grid-cols-2
+  grid-cols-1
 `
 
 const HeroPrimary = tw.div`
-  flex items-center justify-center pb-16
+  flex items-center justify-center sm:pb-16 
+  pt-36 h-[550px] sm:h-[600px]
 `
 const PrimaryContent = tw.div`
   flex flex-col justify-evenly h-[400px] md:h-[450px] 
@@ -25,7 +26,7 @@ const PrimaryContent = tw.div`
 `
 const HeadlineText = tw.h1`
   text-[2rem] sm:text-[2.5rem] md:leading-[3rem] 
-  tracking-wide leading-[2rem] font-bold 
+  tracking-wide leading-[2rem] font-bold font-sans 
   sm:w-96
 `
 const HeadlineContainer = tw.div`
@@ -99,9 +100,8 @@ const StoreItem = (props: ImageProps) => (
 
 const HeroSecondary = tw.div`
   md:h-screen
-  col-span-1
-  hidden
   md:flex
+  h-fit
 `
 
 const WaveOne = tw.div`

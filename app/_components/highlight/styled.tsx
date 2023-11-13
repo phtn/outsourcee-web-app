@@ -1,66 +1,40 @@
+import Image from 'next/image'
 import tw from 'tailwind-styled-components'
 
 const Container = tw.div`
   h-[750px] w-full flex flex-col md:grid md:grid-cols-2
 `
 
-const HeaderContainer = tw.div`
-  w-full h-fit flex items-center justify-start
+const PrimaryContent = tw.div`
+  h-full md:my-16 mx-6 md:flex hidden justify-end
 `
 
-const HeaderContent = tw.div`
-  w-fit flex flex-col items-start justify-center h-full
+const SecondaryContent = tw.div`
+  h-full sm:my-16
 `
 
-const HeaderTagContainer = tw.div`
-  bg-primary-foreground h-fit w-[150px] px-3 py-[2px] 
-  flex items-center justify-center rounded-[2px]
-  shadow-xl shadow-[#54c8e8]/30
+const Stack = tw.div`
+  h-fit p-8
 `
 
-const HeaderTag = tw.h2`
-  text-white font-extrabold text-[0.64rem] 
-  uppercase tracking-[2.5px] py-1
+const Content = tw.div`
+  flex items-center justify-center pb-10 sm:pb-6
 `
 
-const HeaderTitleContainer = tw.div`
-  h-[100px] flex items-center justify-center
+const MobileAvatar = tw.div`
+  bg-[url('/lifestyle/life-v1.webp')] bg-cover bg-no-repeat flex md:hidden h-[100px] w-[100px] mr-8 rounded-full
 `
 
-const HeaderTitle = tw.h2`
-  text-[2.5rem] font-medium leading-[28px]
+const DesktopAvatar = tw(Image)`
+  h-32 md:h-96 w-auto rounded-full object-cover aspect-3/4 
 `
 
-const HeaderSeparator = tw.div`
-  w-[320px] border-b-8 border-secondary-foreground/70
-`
-
-type HeaderProps = {
-	tag: string
-	title: string
+export {
+	Container,
+	Content,
+	DesktopAvatar,
+	MobileAvatar,
+	PrimaryContent,
+	SecondaryContent,
+	Stack,
 }
-
-const Header = ({ tag, title }: HeaderProps) => (
-	<HeaderContainer>
-		<HeaderContent>
-			<HeaderTagContainer>
-				<HeaderTag>{tag}</HeaderTag>
-			</HeaderTagContainer>
-			<HeaderTitleContainer>
-				<div className=''>
-					<span className='text-muted-foreground text-sm mx-2 font-light bg-foreground/5 px-2 rounded-md'>
-						Meet
-					</span>
-					<HeaderTitle>{title}</HeaderTitle>
-				</div>
-			</HeaderTitleContainer>
-			{/* <HeaderSeparator /> */}
-		</HeaderContent>
-	</HeaderContainer>
-)
-
-const HeaderGap = tw.div`
-  h-[75px]
-`
-
-export { Container, Header }

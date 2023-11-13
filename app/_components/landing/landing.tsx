@@ -16,11 +16,21 @@ import { ActionProps, LandingProps } from './types'
 import { motion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
 import { getNextElement } from '@/app/_utils/helpers'
-import { Hero } from '../hero/Hero'
+import Hero from '../hero'
 import FirstPanel from '../panels/first-panel'
 import Features from '../features/features'
 import { features } from '../features/features-data'
-import Highlight from '../highlight/highlight'
+import Highlight from '../highlight'
+import MetricsBanner from '../metrics-banner'
+import { MetricItemProps } from '../metrics-banner/types'
+import Reviews from '../reviews'
+
+const metrics: MetricItemProps[] = [
+	{ value: '500,000', label: 'downloads' },
+	{ value: '300K', label: 'active users' },
+	{ value: '+100', label: 'services' },
+	{ value: '20K', label: 'providers' },
+]
 
 const Landing = ({ scrollToNext }: LandingProps) => {
 	const headerProps = { tag: 'discover', title: 'Top Features' }
@@ -32,8 +42,11 @@ const Landing = ({ scrollToNext }: LandingProps) => {
 					headerProps={headerProps}
 					features={features}
 				/>
+				<MetricsBanner metrics={metrics} />
 				<Highlight />
+				<Reviews />
 
+				<div className='h-[400px]'></div>
 				{/* <FirstPanel /> */}
 			</LandingContent>
 			{/* <ScreenshotModule /> */}

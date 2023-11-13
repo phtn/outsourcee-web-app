@@ -44,6 +44,8 @@ const Navbar = () => {
 
 const DarkLogo = () => (
 	<Image
+		placeholder='blur'
+		blurDataURL='/logo/Outsourcee_Logo_white.webp'
 		alt='logo'
 		src='/logo/Outsourcee_Logo_white.png'
 		height={400}
@@ -54,6 +56,8 @@ const DarkLogo = () => (
 
 const LightLogo = () => (
 	<Image
+		placeholder='blur'
+		blurDataURL='/logo/Outsourcee_Logo_black.webp'
 		alt='logo'
 		src='/logo/Outsourcee_Logo.png'
 		height={400}

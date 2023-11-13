@@ -10,7 +10,6 @@ const LandingContainer = tw.div`
   flex-col
   w-full
   bg-gradient-to-br
-  
   transition-colors
   duration-1000
   overflow-hidden
@@ -23,7 +22,8 @@ const LandingContent = tw.div`
   bg-gradient-to-b
   from-transparent
   to-background
-  overflow-scroll
+  overflow-y-scroll
+  overflow-x-hidden
   h-screen
 `
 

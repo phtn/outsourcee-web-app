@@ -1,7 +1,15 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Container, Header } from './styled'
-import Image from 'next/image'
-import { ReactElement } from 'react'
+import { ProfileContentProps, TabContentProps, TabTriggerProps } from './types'
+import { Header } from './header'
+import {
+	Container,
+	Content,
+	DesktopAvatar,
+	MobileAvatar,
+	PrimaryContent,
+	SecondaryContent,
+	Stack,
+} from './styled'
 
 const Highlight = () => (
 	<Container>
@@ -11,55 +19,38 @@ const Highlight = () => (
 )
 
 const Primary = () => (
-	<div className='h-full md:my-16 mx-6 md:flex hidden justify-end'>
-		<Image
+	<PrimaryContent>
+		<DesktopAvatar
 			alt=''
 			src={'/lifestyle/life-v1.jpg'}
-			height={400}
-			width={400}
-			className='h-32 md:h-96 w-auto rounded-full'
+			height={500}
+			width={500}
 		/>
-	</div>
+	</PrimaryContent>
 )
 
 const Secondary = () => (
-	<div className='h-full md:my-16 '>
-		<div className='h-fit p-8 border-secondary-foreground border-l-[0.33px]'>
-			<div className='flex pb-10 md:pb-0'>
-				<div
-					className={`bg-[url('/lifestyle/life-v1.jpg')] bg-cover bg-no-repeat flex md:hidden h-32 w-56 mr-8 rounded-full`}
-				/>
+	<SecondaryContent>
+		<Stack>
+			<Content>
+				<MobileAvatar />
 				<Header
-					tag='popular'
+					tag='meet'
 					title='Samantha'
+					rating={(5).toFixed(1).toString()}
+					reviews={78}
+					subtext='Nail Specialist'
 				/>
-			</div>
-
+			</Content>
 			<Details />
-		</div>
-	</div>
+		</Stack>
+	</SecondaryContent>
 )
-
-type TabTriggerProps = {
-	id: number
-	value: string
-	title: string
-}
-
-type TabContentProps = {
-	id: number
-	value: string
-	content: ReactElement
-}
-
-type ProfileContentProps = {
-	summary: string
-}
 
 const ProfileContent = ({ summary }: ProfileContentProps) => <>{summary}</>
 
-const list = 'justify-start bg-transparent border-b border-secondary-foreground'
-const trigger = `px-6 mr-2.5 md:mr-6 tracking-wider`
+const list = 'justify-start bg-transparent'
+const trigger = `px-6 border-b border-secondary-foreground`
 const content = `p-3 h-fit md:w-[450px]`
 
 const triggers: TabTriggerProps[] = [
@@ -101,6 +92,7 @@ const Details = () => (
 		</TabsList>
 		{contents.map((item) => (
 			<TabsContent
+				key={item.id}
 				className={content}
 				value={item.value}>
 				{item.content}

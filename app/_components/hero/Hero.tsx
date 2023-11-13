@@ -160,4 +160,4 @@ const DownloadStore = () => (
 	</motion.div>
 )
 
-export { Hero }
+export default Hero
