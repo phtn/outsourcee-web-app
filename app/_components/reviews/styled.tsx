@@ -21,11 +21,11 @@ const Stack = tw.div`
 `
 
 const TitleContainer = tw.div`
-  h-[75px] flex items-center py-3
+  flex flex-col justify-center h-fit pt-3
 `
 
 const TitleText = tw.p`
-  text-[1.25rem] sm:text-[1.75rem] font-bold text-foreground dark:text-slate-900
+  text-[1.25rem] sm:text-[1.75rem] leading-[1.25rem] font-bold text-foreground dark:text-slate-900
 `
 
 const ContentText = tw.p`
@@ -37,7 +37,7 @@ const AuthorText = tw.p`
 `
 
 const ContentContainer = tw.div`
-  flex justify-start pb-3
+  flex justify-start
 `
 
 const AuthorContainer = tw.div`
