@@ -24,6 +24,7 @@ import Highlight from '../highlight'
 import MetricsBanner from '../metrics-banner'
 import { MetricItemProps } from '../metrics-banner/types'
 import Reviews from '../reviews'
+import Collage from '../collage'
 
 const metrics: MetricItemProps[] = [
 	{ value: '500,000', label: 'downloads' },
@@ -44,6 +45,7 @@ const Landing = ({ scrollToNext }: LandingProps) => {
 				/>
 				<MetricsBanner metrics={metrics} />
 				<Highlight />
+				<Collage />
 				<Reviews />
 
 				<div className='h-[400px]'></div>

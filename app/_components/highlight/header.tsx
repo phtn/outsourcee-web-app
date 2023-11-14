@@ -24,7 +24,7 @@ const TitleContainer = tw.div`
 `
 
 const HeaderTitle = tw.h2`
-	text-[2rem] sm:text-[2.5rem] font-bold leading-[24px] sm:leading-10
+	text-[1.5rem] sm:text-[2.5rem] font-bold leading-[24px] sm:leading-10
 `
 
 const HeaderSeparator = tw.div`
@@ -97,7 +97,13 @@ const Details = ({ title, rating, reviews }: Partial<HeaderProps>) => (
 	</DetailsContainer>
 )
 
-const Header = ({ rating, reviews, subtext, tag, title }: HeaderProps) => (
+const HighlightHeader = ({
+	rating,
+	reviews,
+	subtext,
+	tag,
+	title,
+}: HeaderProps) => (
 	<HeaderContainer>
 		<HeaderContent>
 			<Tag tag={tag} />
@@ -113,4 +119,4 @@ const Header = ({ rating, reviews, subtext, tag, title }: HeaderProps) => (
 	</HeaderContainer>
 )
 
-export { Header }
+export { HighlightHeader }

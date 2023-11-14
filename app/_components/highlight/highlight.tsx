@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ProfileContentProps, TabContentProps, TabTriggerProps } from './types'
-import { Header } from './header'
+import { HighlightHeader } from './header'
 import {
 	Container,
 	Content,
@@ -10,12 +10,19 @@ import {
 	SecondaryContent,
 	Stack,
 } from './styled'
+import { Header } from '../header'
 
 const Highlight = () => (
-	<Container>
-		<Primary />
-		<Secondary />
-	</Container>
+	<>
+		<Header
+			tag='popular'
+			title='Top Outsourcees'
+		/>
+		<Container>
+			<Primary />
+			<Secondary />
+		</Container>
+	</>
 )
 
 const Primary = () => (
@@ -34,7 +41,7 @@ const Secondary = () => (
 		<Stack>
 			<Content>
 				<MobileAvatar />
-				<Header
+				<HighlightHeader
 					tag='meet'
 					title='Samantha'
 					rating={(5).toFixed(1).toString()}

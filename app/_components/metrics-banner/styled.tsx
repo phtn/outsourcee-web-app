@@ -1,7 +1,7 @@
 import tw from 'tailwind-styled-components'
 
 const Container = tw.div`
-  grid grid-cols-2 lg:grid-cols-4 mb-16 bg-primary-foreground
+  grid grid-cols-2 lg:grid-cols-4 mb-24 bg-primary-foreground
 `
 
 const Cell = tw.div`

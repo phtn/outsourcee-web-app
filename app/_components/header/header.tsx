@@ -9,7 +9,7 @@ const HeaderContent = tw.div`
 `
 
 const HeaderTagContainer = tw.div`
-  bg-primary-foreground h-fit w-[150px] px-3 py-[2px] 
+  bg-primary-foreground h-8 w-[150px] px-3 pt-2
   flex items-center justify-center rounded-[2px]
   shadow-xl shadow-[#54c8e8]/30
 `
@@ -24,7 +24,7 @@ const HeaderTitleContainer = tw.div`
 `
 
 const HeaderTitle = tw.h2`
-  text-[2.5rem] font-light
+  text-[2rem] sm:text-[2.5rem] font-light text-foreground
 `
 
 const HeaderSeparator = tw.div`

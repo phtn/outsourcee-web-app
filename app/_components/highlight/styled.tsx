@@ -22,7 +22,7 @@ const Content = tw.div`
 `
 
 const MobileAvatar = tw.div`
-  bg-[url('/lifestyle/life-v1.webp')] bg-cover bg-no-repeat flex md:hidden h-[100px] w-[100px] mr-8 rounded-full
+  bg-[url('/lifestyle/life-v1.webp')] bg-cover bg-no-repeat flex md:hidden h-[125px] w-[125px] mr-8 rounded-full
 `
 
 const DesktopAvatar = tw(Image)`

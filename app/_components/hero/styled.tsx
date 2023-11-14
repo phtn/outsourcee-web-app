@@ -10,30 +10,30 @@ const HeroContent = tw.div`
   md:h-screen
   z-20
   justify-center
-  grid
+ grid
   md:grid-cols-2
   grid-cols-1
 `
 
 const HeroPrimary = tw.div`
   flex items-center justify-center sm:pb-16 
-  pt-36 h-[550px] sm:h-[600px]
+  pt-24 sm:pt-36 h-[550px] sm:h-[600px] md:h-[700px]
 `
 const PrimaryContent = tw.div`
   flex flex-col justify-evenly h-[400px] md:h-[450px] 
-  px-8 sm:px-24 lg:pl-32 lg:pr-14 z-40
-  w-fit
+  px-8 sm:pl-24 lg:pl-32 lg:pr-14 z-40
 `
 const HeadlineText = tw.h1`
-  text-[2rem] sm:text-[2.5rem] md:leading-[3rem] 
-  tracking-wide leading-[2rem] font-bold font-sans 
-  sm:w-96
+  text-[2rem] sm:text-[2.5rem] lg:text-[3.25rem]  
+  leading-[2rem] md:leading-[3.25rem]
+  tracking-wide font-bold font-sans
+  text-foreground
 `
 const HeadlineContainer = tw.div`
   flex
   md:h-fit
   h-[72px]
-  lg:w-[400px]
+  sm:w-96 md:w-[500px]
 `
 
 const HeadlineContent = ({ headline }: { headline: string }) => (
