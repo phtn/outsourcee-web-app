@@ -2,7 +2,7 @@ import Image from 'next/image'
 import tw from 'tailwind-styled-components'
 
 const GridContainer = tw.div`
-  h-96 sm:h-[700px] md:grid md:grid-cols-5 mb-24
+  h-96 sm:h-[600px] md:grid md:grid-cols-5 mb-24
 `
 
 const PrimaryContent = tw.div`
@@ -10,7 +10,7 @@ const PrimaryContent = tw.div`
 `
 
 const Headline = tw.h1`
-  font-extrabold text-[2.5rem] text-foreground my-3 w-96
+  font-extrabold text-[2.5rem] text-foreground my-3 w-56 sm:w-96
 `
 
 const Subtext = tw.h2`

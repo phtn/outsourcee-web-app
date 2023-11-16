@@ -28,7 +28,7 @@ const PostScript = () => (
 
 const Primary = () => (
 	<PrimaryContent>
-		<Headline>Download the app</Headline>
+		<Headline>Download the app.</Headline>
 		<Subtext>
 			Available on the Apple App Store, Google Play Store, and Huawei App
 			Gallery.
