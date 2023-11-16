@@ -3,8 +3,8 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Toaster } from 'sonner'
 import Navbar from './_components/navbar'
-import Footer from './_components/footer'
 
 const outfit = Inter({ subsets: ['latin'] })
 
@@ -28,7 +28,7 @@ export default function RootLayout({
 					disableTransitionOnChange>
 					<Navbar />
 					{children}
-					<Footer />
+					<Toaster />
 				</ThemeProvider>
 			</body>
 		</html>

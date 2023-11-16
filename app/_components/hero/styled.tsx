@@ -57,47 +57,6 @@ const Subtext = ({ subtext }: { subtext: string }) => (
 	</SubtextContainer>
 )
 
-const StoreContainer = tw.div`
-  grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 xl:grid-cols-3 gap-x-2 gap-y-4 md:gap-y-4 lg:gap-y-6 sm:mr-8
-`
-
-const StoreContent = tw.div`
-  z-30
-  py-3
-  flex
-  bg-cover
-  rounded-xl
-  bg-no-repeat
-  shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] 
-  bg-black
-  border
-  dark:border-[#0b4454]
-  dark:hover:border-primary-foreground
-  hover:scale-105
-  transition-all
-  duration-300
-  overflow-hidden
-  items-center
-  justify-center
-  w-fit
-  xl:px-4
-  md:px-2
-  px-2
-
-`
-
-const StoreImage = tw(Image)<ImageProps>`
-  xl:h-fit
-  h-10
-  w-auto
-`
-
-const StoreItem = (props: ImageProps) => (
-	<StoreContent>
-		<StoreImage {...props} />
-	</StoreContent>
-)
-
 const HeroSecondary = tw.div`
   md:h-screen
   md:flex
@@ -137,8 +96,6 @@ export {
 	HeroPrimary,
 	HeroSecondary,
 	PrimaryContent,
-	StoreContainer,
-	StoreItem,
 	Subtext,
 	WaveOne,
 }

@@ -88,23 +88,26 @@ const Caption = ({ caption }: { caption: string }) => (
 )
 
 const small = `h-16 w-16 rounded-full flex items-center justify-center mx-2 bg-white shadow-xl shadow-[#54c8e8]/20`
-const medium = `h-24 w-24 rounded-full flex items-center justify-center mx-2 bg-white shadow-xl shadow-[#54c8e8]/20`
-const big = `relative top-[-24px] h-32 w-32 rounded-full flex items-center justify-center mx-2 bg-white shadow-xl shadow-[#54c8e8]/20`
+const medium = `scale-95 hover:scale-110 transition-transform duration-500 h-24 w-24 rounded-full flex items-center justify-center mx-2 bg-white shadow-xl shadow-[#54c8e8]/20`
+const big = `scale-95 hover:scale-110 transition-transform duration-500 relative top-[-24px] h-32 w-32 rounded-full flex items-center justify-center mx-2 bg-white shadow-xl shadow-[#54c8e8]/20`
 
 const Small = ({ src }: { src: string }) => (
-	<div className={small}>
+	<div
+		className={`${small} cursor-pointer scale-95 hover:scale-110 transition-transform duration-500`}>
 		<div className={`${src} bg-contain h-12 w-12`} />
 	</div>
 )
 
 const Medium = ({ src }: { src: string }) => (
-	<div className={medium}>
+	<div
+		className={`${medium} cursor-pointer scale-95 hover:scale-110 transition-transform duration-500`}>
 		<div className={`${src} bg-contain h-16 w-16`} />
 	</div>
 )
 
 const Big = ({ src }: { src: string }) => (
-	<div className={big}>
+	<div
+		className={`${big} cursor-pointer scale-95 hover:scale-110 transition-transform duration-500`}>
 		<div className={`${src} bg-contain h-24 w-24`} />
 	</div>
 )

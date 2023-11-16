@@ -104,18 +104,9 @@ const ActionContainer = tw.section`
   backdrop-blur-sm
 `
 
-/*
-
-xl:h-[1400px]
-  lg:h-[1600px]
-  md:h-[1600px]
-  h-[1600px]
-  xl:mt-[-400px]
-  lg:mt-[-360px]
-  md:mt-[-132px]
-  mt-[-200px]
-
-*/
+const PaddingFooter = tw.div`
+  h-[400px]
+`
 
 export {
 	ActionContainer,
@@ -126,6 +117,7 @@ export {
 	HeroSecondary,
 	LandingContent,
 	LandingContainer,
+	PaddingFooter,
 	PrimaryLabel,
 	SecondaryLabel,
 }

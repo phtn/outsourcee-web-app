@@ -8,8 +8,6 @@ import {
 	HeroPrimary,
 	HeroSecondary,
 	PrimaryContent,
-	StoreContainer,
-	StoreItem,
 	Subtext,
 	WaveOne,
 } from './styled'
@@ -19,6 +17,7 @@ import { headlines } from './headline-data'
 import { useCallback, useEffect, useState } from 'react'
 import { getNextElement } from '@/app/_utils/helpers'
 import { easeInOut } from 'popmotion'
+import DownloadLinks from '../download-links'
 
 const Hero = () => (
 	<HeroContainer>
@@ -52,7 +51,6 @@ const Primary = () => {
 	return (
 		<HeroPrimary>
 			<motion.div
-				// className='z-20 flex'
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.7, delay: 1.6, ease: 'easeInOut' }}>
@@ -80,7 +78,7 @@ const Primary = () => {
 							professionals.'
 						/>
 					</motion.div>
-					<DownloadStore />
+					<DownloadLinks />
 				</PrimaryContent>
 			</motion.div>
 		</HeroPrimary>
@@ -106,57 +104,10 @@ const Footer = () => (
 		<WaveOne>
 			<FooterContent>
 				<Link href={'/'}>
-					<FooterItem>Terms of Use | Privacy Policy</FooterItem>
+					<FooterItem></FooterItem>
 				</Link>
 			</FooterContent>
 		</WaveOne>
-	</motion.div>
-)
-
-type LinkType = {
-	title: string
-	image: string
-	link: string
-}
-
-const stores: LinkType[] = [
-	{
-		title: 'app-store',
-		image: `/images/app-store-v4.png`,
-		link: '/app-store',
-	},
-	{
-		title: 'play-store',
-		image: `/images/play-store-v4.png`,
-		link: '/play-store',
-	},
-	{
-		title: 'app-gallery',
-		image: `/images/app-gallery-v4.png`,
-		link: '/app-gallery',
-	},
-]
-
-const DownloadStore = () => (
-	<motion.div
-		initial={{ opacity: 0 }}
-		animate={{ opacity: 1 }}
-		transition={{ duration: 0.2, delay: 2.0 }}>
-		<StoreContainer>
-			{stores.map((item, index) => (
-				<Link
-					className='flex items-center justify-center md:justify-start'
-					key={item.link}
-					href={item.link}>
-					<StoreItem
-						alt=''
-						src={item.image}
-						height={300}
-						width={400}
-					/>
-				</Link>
-			))}
-		</StoreContainer>
 	</motion.div>
 )
 

@@ -29,7 +29,8 @@ const TitleText = tw.p`
 `
 
 const ContentText = tw.p`
-  dark:text-white text-muted-foreground text-sm text-justify
+  dark:text-white text-muted-foreground 
+  text-sm text-justify px-6 pt-2
 `
 
 const AuthorText = tw.p`
@@ -37,7 +38,6 @@ const AuthorText = tw.p`
 `
 
 const ContentContainer = tw.div`
-  flex justify-start
 `
 
 const AuthorContainer = tw.div`

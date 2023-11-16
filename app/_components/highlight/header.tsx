@@ -9,14 +9,14 @@ const HeaderContent = tw.div`
 `
 
 const TagContainer = tw.div`
-  bg-primary-foreground h-fit px-3 py-[2px] 
+  bg-primary-foreground h-fit px-3 pt-2
   flex items-center justify-center rounded-[2px]
   shadow-xl shadow-[#54c8e8]/30
 `
 
 const TagLabel = tw.h2`
   text-white font-extrabold text-[0.64rem] 
-  uppercase tracking-[2.5px] py-1
+  uppercase tracking-[2.5px]
 `
 
 const TitleContainer = tw.div`
