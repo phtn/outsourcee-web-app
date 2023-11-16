@@ -1,16 +1,8 @@
 'use client'
 
-import useDimensions from '@/app/_utils/hooks/useDimensions'
 import useToggleMode from '@/app/_utils/hooks/useToggleMode'
 import { useAnimation, motion } from 'framer-motion'
-import {
-	MutableRefObject,
-	useRef,
-	useEffect,
-	useLayoutEffect,
-	useState,
-	useCallback,
-} from 'react'
+import { MutableRefObject, useRef, useEffect, useLayoutEffect } from 'react'
 import tw from 'tailwind-styled-components'
 
 type OriginOffset = {
@@ -31,8 +23,6 @@ const gridClass = `
 	gap-[0.5px] h-screen overflow-hidden
 	`
 export function Grid() {
-	const { cells } = useDimensions()
-	const [length, setLength] = useState(cells)
 	const delayPerPixel = 0.0008
 	const originOffset = useRef({ top: 0, left: 0 })
 	const controls = useAnimation()
@@ -41,10 +31,6 @@ export function Grid() {
 	useEffect(() => {
 		controls.start('visible')
 	}, [checked, controls, originOffset])
-
-	useEffect(() => {
-		setLength(cells)
-	}, [cells])
 
 	return (
 		<motion.div

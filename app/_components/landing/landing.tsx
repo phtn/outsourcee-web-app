@@ -9,6 +9,8 @@ import PostScript from '../postscript'
 import Footer from '../footer'
 import { features } from '../features/features-data'
 import { MetricItemProps } from '../metrics-banner/types'
+import { toast } from 'sonner'
+import { useEffect } from 'react'
 
 const metrics: MetricItemProps[] = [
 	{ value: '500,000', label: 'downloads' },

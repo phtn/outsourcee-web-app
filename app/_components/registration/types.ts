@@ -1,18 +1,24 @@
-import { UseFormReturn } from 'react-hook-form'
+import { Dispatch, SetStateAction } from 'react'
+import { ControllerRenderProps, UseFormReturn } from 'react-hook-form'
 
-interface Values {
+interface RegistrationValues {
 	name: string
 	email: string
 	phone: string
+	location: string
 }
 
 type OnSubmit = {
-	values: Values
+	values: RegistrationValues
 }
 
 type FormProps = {
-	form: UseFormReturn<Values>
-	onSubmit: (values: Values) => void
+	form: UseFormReturn<RegistrationValues>
+	onSubmit: (values: RegistrationValues) => void
 }
 
-export type { OnSubmit, FormProps }
+type SetLocationProps = {
+	onValueChange: (value: string) => void
+}
+
+export type { OnSubmit, FormProps, SetLocationProps, RegistrationValues }

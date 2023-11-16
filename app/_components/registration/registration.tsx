@@ -7,6 +7,7 @@ import {
 	SheetTrigger,
 } from '@/components/ui/sheet'
 import { RegistrationForm } from './form'
+import { Header, HeaderGap } from '../header'
 
 const Registration = () => (
 	<Sheet>
@@ -20,17 +21,23 @@ const Registration = () => (
 			side={'bottom'}>
 			<SheetHeader>
 				<SheetTitle>
-					<span className='px-4 py-2 bg-primary-foreground text-white rounded'>
-						Outsourcee Registration
-					</span>
+					<Header
+						tag='Join us'
+						title='Outsourcee Registration'
+					/>
+					<HeaderGap />
 				</SheetTitle>
-				<SheetDescription className='py-8 sm:w-96 self-center'>
+				{/* <SheetDescription className='py-8 sm:w-96 self-center'>
 					An Outsourcee is a skilled individual that provides quality service to
 					their clients. If you want to connect to broad range of clients, this
 					s the place for you!
-				</SheetDescription>
+				</SheetDescription> */}
 			</SheetHeader>
-			<RegistrationForm />
+			<div className='md:grid md:grid-cols-2'>
+				<RegistrationForm />
+				<div
+					className={`bg-[url('/images/worker.webp')] hidden md:flex bg-cover`}></div>
+			</div>
 		</SheetContent>
 	</Sheet>
 )
