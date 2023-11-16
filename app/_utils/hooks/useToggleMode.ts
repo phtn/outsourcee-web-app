@@ -14,7 +14,7 @@ const useToggleMode = () => {
 		} else {
 			setTheme('light')
 		}
-	}, [checked])
+	}, [checked, setTheme])
 
 	return { checked, toggleMode }
 }

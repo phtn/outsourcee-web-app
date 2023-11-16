@@ -20,8 +20,6 @@ const metrics: MetricItemProps[] = [
 const Landing = () => {
 	const headerProps = { tag: 'discover', title: 'Top Features' }
 
-	const onPressRegister = () => {}
-
 	return (
 		<LandingContainer>
 			<LandingContent>

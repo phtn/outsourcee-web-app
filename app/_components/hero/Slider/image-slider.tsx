@@ -2,8 +2,6 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { wrap } from 'popmotion'
 import { images } from './image-data'
-import { Button } from '@/components/ui/button'
-import { ChevronLeftIcon, ChevronRightIcon, DotIcon } from 'lucide-react'
 import { SliderContainer } from './styled'
 
 const variants = {

@@ -30,8 +30,6 @@ const gridClass = `
 	grid grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 
 	gap-[0.5px] h-screen overflow-hidden
 	`
-// xl:h-[240vh] lg:h-[220vh] md:h-[218vh]
-
 export function Grid() {
 	const { cells } = useDimensions()
 	const [length, setLength] = useState(cells)
@@ -42,7 +40,7 @@ export function Grid() {
 
 	useEffect(() => {
 		controls.start('visible')
-	}, [checked])
+	}, [checked, controls, originOffset])
 
 	useEffect(() => {
 		setLength(cells)

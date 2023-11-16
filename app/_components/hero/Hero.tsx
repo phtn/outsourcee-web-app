@@ -41,7 +41,7 @@ const Primary = () => {
 		return () => {
 			clearTimeout(timeout)
 		}
-	}, [index, count])
+	}, [index, count, headlines])
 
 	const Headline = useCallback(
 		() => <HeadlineContent headline={headlines[index].headline} />,

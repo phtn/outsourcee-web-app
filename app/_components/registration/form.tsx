@@ -61,7 +61,7 @@ export function RegistrationForm() {
 			/>
 		)
 		return <>{options.get(loading)}</>
-	}, [loading])
+	}, [loading, form])
 
 	return (
 		<div className='flex justify-center mb-10 h-[500px]'>

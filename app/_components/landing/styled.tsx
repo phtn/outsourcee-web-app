@@ -1,11 +1,5 @@
 import tw from 'tailwind-styled-components'
-/*
-xl:h-[2100px]
-  lg:h-[1900px]
-  md:h-[2000px]
-  h-[1700px]
 
-*/
 const LandingContainer = tw.div`
   flex-col
   w-full
