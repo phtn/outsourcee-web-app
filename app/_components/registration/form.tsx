@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button'
 import {
 	Form,
 	FormControl,
-	FormDescription,
 	FormField,
 	FormItem,
 	FormLabel,
@@ -14,6 +13,10 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import * as z from 'zod'
+import { useCallback, useState } from 'react'
+import { map } from '@/app/_utils/helpers'
+import { FormProps } from './types'
+import { RefreshCw } from 'lucide-react'
 
 const formSchema = z.object({
 	name: z.string().min(2, {
@@ -28,7 +31,8 @@ const formSchema = z.object({
 })
 
 export function RegistrationForm() {
-	// 1. Define your form.
+	const [loading, setLoading] = useState(false)
+
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -38,79 +42,111 @@ export function RegistrationForm() {
 		},
 	})
 
-	// 2. Define a submit handler.
-	function onSubmit(values: z.infer<typeof formSchema>) {
-		// Do something with the form values.
-		// ✅ This will be type-safe and validated.
+	const onSubmit = (values: z.infer<typeof formSchema>) => {
 		console.log(values)
+		setLoading(true)
 	}
+
+	const HeaderOptions = useCallback(() => {
+		const options = map(<FormLoading />, <FormActive />)
+		return <>{options.get(loading)}</>
+	}, [loading])
+
+	const FormOptions = useCallback(() => {
+		const options = map(
+			<FormLoader />,
+			<FormComponent
+				form={form}
+				onSubmit={onSubmit}
+			/>
+		)
+		return <>{options.get(loading)}</>
+	}, [loading])
 
 	return (
 		<div className='flex justify-center mb-10 h-[500px]'>
 			<div className='border p-3 rounded w-full sm:w-96'>
-				<h2 className='text-sm bg-slate-100 p-3 mb-10'>
-					Fill out this form to register.
-				</h2>
-				<Form {...form}>
-					<form
-						onSubmit={form.handleSubmit(onSubmit)}
-						className='space-y-8'>
-						<FormField
-							control={form.control}
-							name='name'
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel className='text-xs'>Complete Name</FormLabel>
-									<FormControl>
-										<Input
-											placeholder='Type your complete legal name.'
-											{...field}
-										/>
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-						<FormField
-							control={form.control}
-							name='email'
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel className='text-xs'>Email Address</FormLabel>
-									<FormControl>
-										<Input
-											placeholder='Email'
-											{...field}
-										/>
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-						<FormField
-							control={form.control}
-							name='phone'
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel className='text-xs'>Phone Number</FormLabel>
-									<FormControl>
-										<Input
-											placeholder='Phone Number'
-											{...field}
-										/>
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-						<Button
-							type='submit'
-							variant={'outline'}>
-							Submit
-						</Button>
-					</form>
-				</Form>
+				<HeaderOptions />
+				<FormOptions />
 			</div>
 		</div>
 	)
 }
+
+const FormComponent = ({ form, onSubmit }: FormProps) => (
+	<Form {...form}>
+		<form
+			onSubmit={form.handleSubmit(onSubmit)}
+			className='space-y-8'>
+			<FormField
+				control={form.control}
+				name='name'
+				render={({ field }) => (
+					<FormItem>
+						<FormLabel className='text-xs'>Complete Name</FormLabel>
+						<FormControl>
+							<Input
+								placeholder='Type your complete legal name.'
+								{...field}
+							/>
+						</FormControl>
+						<FormMessage />
+					</FormItem>
+				)}
+			/>
+			<FormField
+				control={form.control}
+				name='email'
+				render={({ field }) => (
+					<FormItem>
+						<FormLabel className='text-xs'>Email Address</FormLabel>
+						<FormControl>
+							<Input
+								placeholder='Email'
+								{...field}
+							/>
+						</FormControl>
+						<FormMessage />
+					</FormItem>
+				)}
+			/>
+			<FormField
+				control={form.control}
+				name='phone'
+				render={({ field }) => (
+					<FormItem>
+						<FormLabel className='text-xs'>Phone Number</FormLabel>
+						<FormControl>
+							<Input
+								placeholder='Phone Number'
+								{...field}
+							/>
+						</FormControl>
+						<FormMessage />
+					</FormItem>
+				)}
+			/>
+			<Button
+				type='submit'
+				variant={'outline'}>
+				Submit
+			</Button>
+		</form>
+	</Form>
+)
+
+const FormLoader = () => (
+	<div className='flex items-center justify-center'>
+		<RefreshCw className='animate-spin' />
+	</div>
+)
+
+const FormActive = () => (
+	<h2 className='text-sm bg-slate-100 p-3 mb-10'>
+		Fill out this form to register.
+	</h2>
+)
+
+const FormLoading = () => (
+	<h2 className='text-sm bg-slate-100 p-3 mb-10'>Registering.</h2>
+)
