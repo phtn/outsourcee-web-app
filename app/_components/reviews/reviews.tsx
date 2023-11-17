@@ -37,8 +37,11 @@ const Reviews = () => {
 
 const ReviewItems = () => (
 	<ReviewContent>
-		{reviewData.map((item) => (
-			<Item key={item.id}>
+		{reviewData.map((item, index) => (
+			<Item
+				key={item.id}
+				index={index}
+				length={reviewData.length}>
 				<Cell>
 					<Stack>
 						<Stars />
@@ -91,7 +94,7 @@ const Author = ({ author, avatar }: Pick<Review, 'author' | 'avatar'>) => (
 			<Avatar className='mr-3 h-8 w-8'>
 				<AvatarImage
 					src={avatar}
-					alt='@shadcn'
+					alt='author'
 				/>
 				<AvatarFallback>CN</AvatarFallback>
 			</Avatar>

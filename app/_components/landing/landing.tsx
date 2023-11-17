@@ -13,7 +13,7 @@ import { toast } from 'sonner'
 import { useEffect } from 'react'
 
 const metrics: MetricItemProps[] = [
-	{ value: '500,000', label: 'downloads' },
+	{ value: '500K', label: 'downloads' },
 	{ value: '300K', label: 'active users' },
 	{ value: '+100', label: 'services' },
 	{ value: '20K', label: 'providers' },

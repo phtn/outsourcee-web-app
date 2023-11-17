@@ -28,6 +28,23 @@ const MobileAvatar = tw.div`
 const DesktopAvatar = tw(Image)`
   h-32 md:h-96 w-auto rounded-full object-cover aspect-3/4 
 `
+const ProfileServices = ({
+	profileServices,
+}: {
+	profileServices: string[]
+}) => {
+	return (
+		<ul>
+			{profileServices.map((item) => (
+				<li
+					key={item}
+					className='text-sm'>
+					{item}
+				</li>
+			))}
+		</ul>
+	)
+}
 
 export {
 	Container,
@@ -35,6 +52,7 @@ export {
 	DesktopAvatar,
 	MobileAvatar,
 	PrimaryContent,
+	ProfileServices,
 	SecondaryContent,
 	Stack,
 }

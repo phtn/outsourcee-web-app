@@ -8,7 +8,7 @@ import {
 	SecondaryContent,
 	TertiaryContent,
 } from './styled'
-import { FacebookIcon, InstagramIcon, TwitterIcon, XIcon } from 'lucide-react'
+import { FacebookIcon, InstagramIcon, TwitterIcon } from 'lucide-react'
 
 const Footer = () => {
 	return (
@@ -30,9 +30,9 @@ const Primary = () => (
 			className='w-56'
 		/>
 		<PrimaryDetails>
-			<p className='text-xs text-white'>Developed by</p>
+			<span className='text-xs text-white'>Developed by</span>
 			<p className='text-sm text-white font-bold'>
-				Comptrolla Technologies, Inc.{' '}
+				Comptrolla Technologies, Inc.
 			</p>
 			<div className='w-44'>
 				<p className='text-xs text-white font-medium'>

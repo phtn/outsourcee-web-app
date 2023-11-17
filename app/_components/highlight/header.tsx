@@ -24,12 +24,13 @@ const TitleContainer = tw.div`
 `
 
 const HeaderTitle = tw.h2`
-	text-[1.5rem] sm:text-[2.5rem] font-bold leading-[24px] sm:leading-10
+	text-[1.5rem] sm:text-[2.5rem] font-bold leading-[24px] sm:leading-10 dark:text-slate-300
 `
 
 const HeaderSeparator = tw.div`
   w-[320px] border-b-8 border-secondary-foreground/70
 `
+
 const DetailsContainer = tw.div`
 	flex h-[48px] items-center justify-between
 `

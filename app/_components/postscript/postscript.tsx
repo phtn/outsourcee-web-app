@@ -46,19 +46,19 @@ const Secondary = () => (
 		<Row>
 			<PhoneSmall
 				alt=''
-				src='/phones/ss-center.png'
+				src='/phones/phone-v6.webp'
 				height={400}
 				width={400}
 			/>
 			<PhoneBig
 				alt=''
-				src='/phones/ss-center.png'
+				src='/phones/phone-v5.webp'
 				height={400}
 				width={400}
 			/>
 			<PhoneSmall
 				alt=''
-				src='/phones/ss-center.png'
+				src='/phones/phone-v4.webp'
 				height={400}
 				width={400}
 			/>

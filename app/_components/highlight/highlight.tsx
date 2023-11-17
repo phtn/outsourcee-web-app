@@ -7,6 +7,7 @@ import {
 	DesktopAvatar,
 	MobileAvatar,
 	PrimaryContent,
+	ProfileServices,
 	SecondaryContent,
 	Stack,
 } from './styled'
@@ -54,7 +55,9 @@ const Secondary = () => (
 	</SecondaryContent>
 )
 
-const ProfileContent = ({ summary }: ProfileContentProps) => <>{summary}</>
+const ProfileContent = ({ summary }: ProfileContentProps) => (
+	<p className='text-xs text-justify w-72 dark:text-slate-300'>{summary}</p>
+)
 
 const list = 'justify-start bg-transparent'
 const trigger = `px-6 border-b border-secondary-foreground`
@@ -69,17 +72,38 @@ const contents: TabContentProps[] = [
 	{
 		id: 0,
 		value: 'profile',
-		content: <ProfileContent summary='Profile Summary' />,
+		content: (
+			<ProfileContent
+				summary={`
+					Samantha have 5 years experiance in providing quality care and service to customers specializing in a wide range of services, 
+					including manicures, pedicures, acrylics, gels, and nail art. Familiar with a variety of applications for improving the appearance 
+					of nails and the best filling and polishing techniques to enhance the appearance of both your hands and feet.`}
+			/>
+		),
 	},
 	{
 		id: 1,
 		value: 'services',
-		content: <ProfileContent summary='Services Summary' />,
+		content: (
+			<ProfileServices
+				profileServices={[
+					'Manicure',
+					'Pedicure',
+					'French Manicure',
+					'Gel Manicure',
+					'Nail Design',
+					'Nail Extension',
+					'Acrylic Nails',
+				]}
+			/>
+		),
 	},
 	{
 		id: 2,
 		value: 'certs',
-		content: <ProfileContent summary='Certs Summary' />,
+		content: (
+			<ProfileContent summary='Beauty Care Services (Nail Care) NC II' />
+		),
 	},
 ]
 

@@ -1,3 +1,5 @@
+import { cn } from '@/lib/utils'
+import { ReactElement } from 'react'
 import tw from 'tailwind-styled-components'
 
 const Container = tw.div`
@@ -8,12 +10,23 @@ const ReviewContent = tw.div`
   flex w-screen py-4 space-x-6 px-6 sm:space-x-10 sm:px-10
 `
 
-const Item = tw.div`
-  bg-[#eff3fc] dark:bg-primary-foreground rounded-3xl 
+const ItemContainer = tw.div`
+  bg-[#eff3fc] dark:bg-primary-foreground rounded-3xl
 `
 
+type ItemProps = {
+	children: ReactElement
+	index: number
+	length: number
+}
+
+const Item = ({ children, index, length }: ItemProps) => {
+	const lastItem = index + 1 === length ? 'mx-10' : ''
+	return <ItemContainer className={cn(lastItem)}>{children}</ItemContainer>
+}
+
 const Cell = tw.div`
-  h-[calc(100vw-75px)] w-[calc(100vw-44px)] sm:h-[calc(100vw/2.25)] sm:w-[calc(100vw/1.5)] md:h-[calc(100vw/2.75)] md:w-[calc(100vw/2)] lg:w-[calc(100vw/2.5)] lg:h-[calc(100vw/3.5)] xl:h-[calc(100vw/4.5)] xl:w-[calc(100vw/3.36)]
+  h-[calc(100vw-20px)] w-[calc(100vw-44px)] sm:h-[calc(100vw/2.25)] sm:w-[calc(100vw/1.5)] md:h-[calc(100vw/2.75)] md:w-[calc(100vw/2)] lg:w-[calc(100vw/2.5)] lg:h-[calc(100vw/3.5)] xl:h-[calc(100vw/4.5)] xl:w-[calc(100vw/3.36)]
 `
 
 const Stack = tw.div`
@@ -38,6 +51,7 @@ const AuthorText = tw.p`
 `
 
 const ContentContainer = tw.div`
+  pt-1
 `
 
 const AuthorContainer = tw.div`
