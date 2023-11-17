@@ -140,6 +140,7 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 							<Input
 								placeholder='Email'
 								{...field}
+								type='email'
 							/>
 						</FormControl>
 						<FormMessage />
@@ -156,6 +157,7 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 							<Input
 								placeholder='Phone Number'
 								{...field}
+								type='number'
 							/>
 						</FormControl>
 						<FormMessage />
