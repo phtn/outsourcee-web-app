@@ -100,7 +100,7 @@ export function RegistrationForm() {
 	}, [loading, form])
 
 	return (
-		<div className='flex justify-center mb-10 h-[550px]'>
+		<div className='flex justify-center mb-4 h-[500px]'>
 			<div className='border-1 border-primary-foreground bg-primary-foreground/5 p-3 rounded w-full sm:w-96'>
 				<HeaderOptions />
 				<FormOptions />
@@ -113,7 +113,7 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 	<Form {...form}>
 		<form
 			onSubmit={form.handleSubmit(onSubmit)}
-			className='space-y-8'>
+			className='space-y-4'>
 			<FormField
 				control={form.control}
 				name='name'
@@ -186,13 +186,13 @@ const FormLoader = () => (
 )
 
 const FormActive = () => (
-	<h2 className='text-sm bg-secondary-foreground/30 p-3 mb-10'>
+	<h2 className='text-sm bg-secondary-foreground/30 p-3 mb-6'>
 		Fill out this form to register.
 	</h2>
 )
 
 const FormLoading = () => (
-	<h2 className='text-sm bg-secondary-foreground/30 p-3 mb-10'>
+	<h2 className='text-sm bg-secondary-foreground/30 p-3 mb-6'>
 		Registering your account.
 	</h2>
 )
