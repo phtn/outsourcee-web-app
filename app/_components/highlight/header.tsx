@@ -9,7 +9,7 @@ const HeaderContent = tw.div`
 `
 
 const TagContainer = tw.div`
-  bg-primary-foreground h-fit px-3 pt-2
+  bg-primary-foreground h-fit px-3 pt-1
   flex items-center justify-center rounded-[2px]
   shadow-xl shadow-[#54c8e8]/30
 `

@@ -15,7 +15,7 @@ const HeaderTagContainer = tw.div`
 `
 
 const HeaderTag = tw.h2`
-  text-white font-extrabold text-[0.64rem] 
+  text-white font-extrabold text-[0.64rem]
   uppercase tracking-[2.5px] py-1
 `
 

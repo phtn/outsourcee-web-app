@@ -16,7 +16,7 @@ import * as z from 'zod'
 import { useCallback, useEffect, useState } from 'react'
 import { map } from '@/app/_utils/helpers'
 import { FormProps } from './types'
-import { Loader2 } from 'lucide-react'
+import { Loader2, MailCheckIcon } from 'lucide-react'
 import { SelectLocation } from './select-location'
 import { POST_RegisterUser } from '@/app/_api/post'
 
@@ -100,7 +100,7 @@ export function RegistrationForm() {
 	}, [loading, form])
 
 	return (
-		<div className='flex justify-center mb-4 h-[500px]'>
+		<div className='flex justify-center my-4 h-[500px]'>
 			<div className='border-1 border-primary-foreground bg-primary-foreground/5 p-3 rounded w-full sm:w-96'>
 				<HeaderOptions />
 				<FormOptions />
@@ -188,19 +188,35 @@ const FormLoader = () => (
 )
 
 const FormActive = () => (
-	<h2 className='text-sm bg-secondary-foreground/30 p-3 mb-6'>
-		Fill out this form to register.
-	</h2>
+	<div>
+		<h2 className='text-foreground'> Join Us</h2>
+		<h3 className='text-sm bg-secondary-foreground rounded p-2 mb-4'>
+			Fill out this form to register.
+		</h3>
+	</div>
 )
 
 const FormLoading = () => (
-	<h2 className='text-sm bg-secondary-foreground/30 p-3 mb-6'>
+	<h2 className='text-sm bg-secondary-foreground p-3 mb-6'>
 		Registering your account.
 	</h2>
 )
 
 const RegisteredEmail = ({ email }: { email: string }) => (
-	<div className='h-32'>
-		<span>{email} already registered.</span>
+	<div className='border-1 dark:border-slate-500 py-6 rounded bg-background'>
+		<div className='flex items-center justify-center'>
+			<MailCheckIcon className='h-4 w-4 text-primary-foreground' />
+			<span className='text-sm text-foreground font-bold mx-2'>
+				Email Address
+			</span>
+		</div>
+		<div className='h-16 flex items-center justify-center'>
+			<span className='bg-primary-foreground text-white text-sm font-medium p-2 rounded'>
+				{email}
+			</span>
+		</div>
+		<div className='flex justify-center items-center'>
+			<span className='text-sm text-foreground'>Successfully Registered!</span>
+		</div>
 	</div>
 )

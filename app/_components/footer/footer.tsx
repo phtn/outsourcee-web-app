@@ -30,13 +30,13 @@ const Primary = () => (
 			className='w-56'
 		/>
 		<PrimaryDetails>
-			<p className='leading-[10px] text-xs text-white'>Developed by</p>
-			<p className='leading-[10px] text-sm text-white font-bold'>
+			<p className='text-xs text-white'>Developed by</p>
+			<p className='text-sm text-white font-bold'>
 				Comptrolla Technologies, Inc.{' '}
 			</p>
-			<div className='w-44 '>
+			<div className='w-44'>
 				<p className='text-xs text-white font-medium'>
-					Ste 203 Tomasca Bldg. Cubao, Quezon City, 1169
+					Ste 203 Tomasca Bldg. Cubao, Quezon City, 1109
 				</p>
 			</div>
 		</PrimaryDetails>
