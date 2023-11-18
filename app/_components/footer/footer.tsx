@@ -11,25 +11,18 @@ import {
 	SecondaryContent,
 	TertiaryContent,
 } from './styled'
-import { FacebookIcon, InstagramIcon, TwitterIcon } from 'lucide-react'
+import { FacebookIcon, InstagramIcon } from 'lucide-react'
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import {
 	Sheet,
-	SheetClose,
 	SheetContent,
-	SheetDescription,
-	SheetFooter,
 	SheetHeader,
-	SheetTitle,
 	SheetTrigger,
 } from '@/components/ui/sheet'
 import { ReactElement } from 'react'
 import { Header } from '../header'
 import { RegistrationForm } from '../registration/form'
-import { KeyValue, ListProps, howItWorks, requirements } from './footer-data'
+import { ListProps, howItWorks, requirements, termsOfUse } from './footer-data'
 import Link from 'next/link'
 
 const Footer = () => {
@@ -88,12 +81,14 @@ const Secondary = () => (
 				description={''}
 				content={<List array={requirements} />}
 			/>
-
+			<ActionSheet
+				trigger='Terms & Conditions'
+				title=''
+				description={''}
+				content={<List array={termsOfUse} />}
+			/>
 			<LinkItem>
 				<LinkText>Privacy Policy</LinkText>
-			</LinkItem>
-			<LinkItem>
-				<LinkText>Terms of Use</LinkText>
 			</LinkItem>
 		</div>
 	</SecondaryContent>
@@ -101,7 +96,9 @@ const Secondary = () => (
 
 const Tertiary = () => (
 	<TertiaryContent>
-		<FacebookIcon className='h-8 w-8 text-white' />
+		<Link href='https://www.facebook.com/profile.php?id=61552807992840&mibextid=LQQJ4d'>
+			<FacebookIcon className='h-8 w-8 text-white' />
+		</Link>
 		<InstagramIcon className='h-8 w-8 text-white' />
 		<Link href='https://twitter.com/outsourceeapp/'>
 			<div className={`h-8 w-8 bg-[url('/svg/twitterx.svg')] bg-contain`} />
