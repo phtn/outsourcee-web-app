@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import {
 	Form,
 	FormControl,
+	FormDescription,
 	FormField,
 	FormItem,
 	FormLabel,
@@ -173,14 +174,17 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 				name='referral'
 				render={({ field }) => (
 					<FormItem>
-						<FormLabel className='text-xs'>Phone Number</FormLabel>
+						<FormLabel className='text-xs'>Referral Code</FormLabel>
 						<FormControl>
 							<Input
-								placeholder='Referral Code'
+								placeholder='Your referral code.'
 								{...field}
 								type='string'
 							/>
 						</FormControl>
+						<FormDescription>
+							Code can be found in the back of the flyer.
+						</FormDescription>
 						<FormMessage />
 					</FormItem>
 				)}
