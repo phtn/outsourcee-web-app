@@ -159,6 +159,7 @@ const List = ({ array }: ListProps) => (
 	<div className=''>
 		{array.map((item) => (
 			<BlockItem
+				key={item.title}
 				title={item.title}
 				subtext={item.subtext}
 			/>
