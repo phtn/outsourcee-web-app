@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import tw from 'tailwind-styled-components'
 
 const GridContainer = tw.div`
@@ -17,7 +16,7 @@ const SecondaryContent = tw.div`
   flex flex-col items-start justify-center md:items-center md:justify-start p-3 
 `
 
-const LinkItem = tw(Link)`
+const LinkItem = tw.div`
   py-2 no-underline hover:underline hover:underline-offset-4
 `
 
@@ -29,7 +28,41 @@ const TertiaryContent = tw.div`
   grid grid-cols-3 items-center justify-center md:justify-center md:items-center h-[100px] p-3 border-0 
 `
 
+const Block = tw.div`
+  flex flex-col mb-6
+`
+
+const Title = tw.h3`
+  font-bold text-foreground text-lg
+`
+
+const Subtext = tw.p`
+  text-sm text-slate-400
+`
+
+const FooterContainer = tw.div`
+	py-16 bg-secondary-foreground w-full flex flex-col items-center justify-center px-6
+`
+
+const FooterText = tw.h5`
+	text-foreground font-bold text-center
+`
+
+type BlockItemProps = {
+	title: string
+	subtext: string
+}
+
+const BlockItem = ({ title, subtext }: BlockItemProps) => (
+	<Block>
+		<Title>{title}</Title>
+		<Subtext>{subtext}</Subtext>
+	</Block>
+)
+
 export {
+	FooterContainer,
+	FooterText,
 	GridContainer,
 	LinkItem,
 	LinkText,
@@ -37,4 +70,5 @@ export {
 	PrimaryDetails,
 	SecondaryContent,
 	TertiaryContent,
+	BlockItem,
 }
