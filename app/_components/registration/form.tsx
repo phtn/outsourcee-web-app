@@ -30,6 +30,9 @@ const formSchema = z.object({
 	phone: z.string().min(10, {
 		message: 'Invalid Phone Number',
 	}),
+	referral: z.string().min(1, {
+		message: 'Invalid Referral Code',
+	}),
 	location: z.string().min(4, {
 		message: 'Select your location.',
 	}),
@@ -62,6 +65,7 @@ export function RegistrationForm() {
 			name: '',
 			email: '',
 			phone: '',
+			referral: '',
 			location: '',
 		},
 	})
@@ -100,8 +104,8 @@ export function RegistrationForm() {
 	}, [loading, form])
 
 	return (
-		<div className='flex justify-center my-4 h-[500px]'>
-			<div className='border-1 border-primary-foreground bg-primary-foreground/5 p-3 rounded w-full sm:w-96'>
+		<div className='flex justify-center my-4 overflow-y-scroll'>
+			<div className='border-1 border-primary-foreground bg-primary-foreground/5 p-3 rounded w-full sm:w-96 h-[600px]'>
 				<HeaderOptions />
 				<FormOptions />
 			</div>
@@ -158,6 +162,23 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 								placeholder='Phone Number'
 								{...field}
 								type='number'
+							/>
+						</FormControl>
+						<FormMessage />
+					</FormItem>
+				)}
+			/>
+			<FormField
+				control={form.control}
+				name='referral'
+				render={({ field }) => (
+					<FormItem>
+						<FormLabel className='text-xs'>Phone Number</FormLabel>
+						<FormControl>
+							<Input
+								placeholder='Referral Code'
+								{...field}
+								type='string'
 							/>
 						</FormControl>
 						<FormMessage />
