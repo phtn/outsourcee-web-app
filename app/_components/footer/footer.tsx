@@ -30,6 +30,7 @@ import { ReactElement } from 'react'
 import { Header } from '../header'
 import { RegistrationForm } from '../registration/form'
 import { KeyValue, ListProps, howItWorks, requirements } from './footer-data'
+import Link from 'next/link'
 
 const Footer = () => {
 	return (
@@ -102,7 +103,9 @@ const Tertiary = () => (
 	<TertiaryContent>
 		<FacebookIcon className='h-8 w-8 text-white' />
 		<InstagramIcon className='h-8 w-8 text-white' />
-		<TwitterIcon className='h-8 w-8 text-white' />
+		<Link href='https://twitter.com/outsourceeapp/'>
+			<div className={`h-8 w-8 bg-[url('/svg/twitterx.svg')] bg-contain`} />
+		</Link>
 	</TertiaryContent>
 )
 

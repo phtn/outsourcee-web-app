@@ -22,6 +22,8 @@ const stores: Link[] = [
 	},
 ]
 
+const playStoreRedirect = () => {}
+
 const DownloadLinks = () => {
 	const toaster = (title: string) => () => {
 		switch (title) {
@@ -30,8 +32,14 @@ const DownloadLinks = () => {
 					description: 'New build will be released shortly. ',
 				})
 			case 'play-store':
-				return toast('In Review for release.', {
-					description: 'Performance and Features update.',
+				return toast('New Release Available.', {
+					description: 'Google Play Store',
+					action: {
+						label: 'Download',
+						onClick: () =>
+							(location.href =
+								'https://play.google.com/store/apps/details?id=com.comptrolla.outsourcing'),
+					},
 				})
 			case 'app-gallery':
 				return toast('Under Development', {

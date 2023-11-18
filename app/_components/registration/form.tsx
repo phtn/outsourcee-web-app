@@ -105,8 +105,8 @@ export function RegistrationForm() {
 	}, [loading, form])
 
 	return (
-		<div className='flex justify-center my-4 overflow-y-scroll'>
-			<div className='border-1 border-primary-foreground bg-primary-foreground/5 p-3 rounded w-full sm:w-96 h-[600px]'>
+		<div className='flex justify-center my-4'>
+			<div className='border-1 border-primary-foreground bg-primary-foreground/5 p-3 rounded w-full sm:w-96 h-[650px]'>
 				<HeaderOptions />
 				<FormOptions />
 			</div>
@@ -124,7 +124,9 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 				name='name'
 				render={({ field }) => (
 					<FormItem>
-						<FormLabel className='text-xs'>Complete Name</FormLabel>
+						<FormLabel className='text-xs text-foreground'>
+							Complete Name
+						</FormLabel>
 						<FormControl>
 							<Input
 								placeholder='Type your complete legal name.'
@@ -140,7 +142,9 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 				name='email'
 				render={({ field }) => (
 					<FormItem>
-						<FormLabel className='text-xs'>Email Address</FormLabel>
+						<FormLabel className='text-xs text-foreground'>
+							Email Address
+						</FormLabel>
 						<FormControl>
 							<Input
 								placeholder='Email'
@@ -157,7 +161,9 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 				name='phone'
 				render={({ field }) => (
 					<FormItem>
-						<FormLabel className='text-xs'>Phone Number</FormLabel>
+						<FormLabel className='text-xs text-foreground'>
+							Phone Number
+						</FormLabel>
 						<FormControl>
 							<Input
 								placeholder='Phone Number'
@@ -174,7 +180,9 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 				name='referral'
 				render={({ field }) => (
 					<FormItem>
-						<FormLabel className='text-xs'>Referral Code</FormLabel>
+						<FormLabel className='text-xs text-foreground'>
+							Referral Code
+						</FormLabel>
 						<FormControl>
 							<Input
 								placeholder='Your referral code.'

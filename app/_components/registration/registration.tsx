@@ -18,11 +18,9 @@ const Registration = () => (
 		</SheetTrigger>
 		<SheetContent
 			className='w-full'
-			side={'bottom'}>
-			<div className='md:grid md:grid-cols-2'>
+			side={'right'}>
+			<div>
 				<RegistrationForm />
-				<div
-					className={`bg-[url('/images/worker.webp')] hidden md:flex bg-cover`}></div>
 			</div>
 		</SheetContent>
 	</Sheet>
