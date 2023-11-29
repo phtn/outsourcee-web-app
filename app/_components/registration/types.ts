@@ -5,6 +5,7 @@ interface RegistrationValues {
 	name: string
 	email: string
 	phone: string
+	skill: string
 	referral: string
 	location: string
 }

@@ -31,6 +31,9 @@ const formSchema = z.object({
 	phone: z.string().min(10, {
 		message: 'Invalid Phone Number',
 	}),
+	skill: z.string().min(3, {
+		message: 'Type the skill or talent you provide.',
+	}),
 	referral: z.string().min(1, {
 		message: 'Invalid Referral Code',
 	}),
@@ -66,6 +69,7 @@ export function RegistrationForm() {
 			name: '',
 			email: '',
 			phone: '',
+			skill: '',
 			referral: '',
 			location: '',
 		},
@@ -106,7 +110,7 @@ export function RegistrationForm() {
 
 	return (
 		<div className='flex justify-center my-4'>
-			<div className='border-1 border-primary-foreground bg-primary-foreground/5 p-3 rounded w-full sm:w-96 h-[650px]'>
+			<div className='border-1 border-primary-foreground bg-primary-foreground/5 p-3 rounded w-full sm:w-96 h-fit'>
 				<HeaderOptions />
 				<FormOptions />
 			</div>
@@ -129,7 +133,7 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 						</FormLabel>
 						<FormControl>
 							<Input
-								placeholder='Type your complete legal name.'
+								placeholder='Your name here.'
 								{...field}
 							/>
 						</FormControl>
@@ -177,6 +181,24 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 			/>
 			<FormField
 				control={form.control}
+				name='skill'
+				render={({ field }) => (
+					<FormItem>
+						<FormLabel className='text-xs text-foreground'>
+							Skill / Talent
+						</FormLabel>
+						<FormControl>
+							<Input
+								placeholder='Type your skills & talents.'
+								{...field}
+							/>
+						</FormControl>
+						<FormMessage />
+					</FormItem>
+				)}
+			/>
+			<FormField
+				control={form.control}
 				name='referral'
 				render={({ field }) => (
 					<FormItem>
@@ -206,8 +228,10 @@ const FormComponent = ({ form, onSubmit }: FormProps) => (
 			/>
 
 			<Button
+				className='w-full'
+				size='lg'
 				type='submit'
-				variant={'outline'}>
+				variant={'default'}>
 				Submit
 			</Button>
 		</form>
@@ -222,7 +246,7 @@ const FormLoader = () => (
 
 const FormActive = () => (
 	<div>
-		<h2 className='text-foreground'> Join Us</h2>
+		<h2 className='text-foreground'> Join us today!</h2>
 		<h3 className='text-sm bg-secondary-foreground rounded p-2 mb-4'>
 			Fill out this form to register.
 		</h3>

@@ -1,13 +1,5 @@
-import {
-	Sheet,
-	SheetContent,
-	SheetDescription,
-	SheetHeader,
-	SheetTitle,
-	SheetTrigger,
-} from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { RegistrationForm } from './form'
-import { Header, HeaderGap } from '../header'
 
 const Registration = () => (
 	<Sheet>

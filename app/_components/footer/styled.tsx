@@ -17,11 +17,11 @@ const SecondaryContent = tw.div`
 `
 
 const LinkItem = tw.div`
-  py-2 no-underline hover:underline hover:underline-offset-4
+  py-2 no-underline hover:underline hover:underline-offset-4 decoration-[#54c8e8] decoration-[4px]
 `
 
 const LinkText = tw.span`
-  text-white font-bold
+  text-slate-700 font-bold hover:text-white transition-all duration-200
 `
 
 const TertiaryContent = tw.div`
@@ -45,7 +45,7 @@ const FooterContainer = tw.div`
 `
 
 const FooterText = tw.h5`
-	text-foreground font-bold text-center
+	text-slate-600 font-bold text-center
 `
 
 type BlockItemProps = {

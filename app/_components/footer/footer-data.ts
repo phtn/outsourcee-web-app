@@ -72,7 +72,7 @@ export const requirements: KeyValue[] = [
 export const termsOfUse: KeyValue[] = [
 	{
 		title: '1. Introduction:',
-		subtext: `Comptrolla is a cross platform app powered by Comptrolla Technologies, Inc. 
+		subtext: `Outsourcee is a cross platform app powered by Comptrolla Technologies, Inc. 
               Available to download in Apple App Store and Google Play Store for free!
               It is designed to simplify and streamline the process of finding and hiring 
               top-quality skilled professionals from everywhere in the Philippines. 

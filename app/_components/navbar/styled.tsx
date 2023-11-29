@@ -19,7 +19,8 @@ const NavContainer = tw.div`
 
 const Brand = tw.section`
   flex
-  h-fit
+  h-[100px]
+  w-[100px]
   items-center
   justify-center
 `

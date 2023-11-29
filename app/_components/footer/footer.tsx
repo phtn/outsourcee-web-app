@@ -45,12 +45,12 @@ const Primary = () => (
 			className='w-56'
 		/>
 		<PrimaryDetails>
-			<span className='text-xs text-white'>Developed by</span>
-			<p className='text-sm text-white font-bold'>
+			<span className='text-xs text-slate-700'>Developed by</span>
+			<p className='text-sm text-slate-700 font-bold'>
 				Comptrolla Technologies, Inc.
 			</p>
 			<div className='w-44'>
-				<p className='text-xs text-white font-medium'>
+				<p className='text-xs text-slate-700 font-medium'>
 					Ste 203 Tomasca Bldg. Cubao, Quezon City, 1109
 				</p>
 			</div>
@@ -97,9 +97,9 @@ const Secondary = () => (
 const Tertiary = () => (
 	<TertiaryContent>
 		<Link href='https://www.facebook.com/profile.php?id=61552807992840&mibextid=LQQJ4d'>
-			<FacebookIcon className='h-8 w-8 text-white' />
+			<FacebookIcon className='h-7 w-7 text-slate-700' />
 		</Link>
-		<InstagramIcon className='h-8 w-8 text-white' />
+		<InstagramIcon className='h-8 w-8 text-slate-700' />
 		<Link href='https://twitter.com/outsourceeapp/'>
 			<div className={`h-8 w-8 bg-[url('/svg/twitterx.svg')] bg-contain`} />
 		</Link>
