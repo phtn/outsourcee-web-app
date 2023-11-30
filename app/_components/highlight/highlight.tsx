@@ -75,7 +75,7 @@ const contents: TabContentProps[] = [
 		content: (
 			<ProfileContent
 				summary={`
-					Samantha have 5 years experiance in providing quality care and service to customers specializing in a wide range of services, 
+					Samantha have 5 years experience in providing quality care and service to customers specializing in a wide range of services, 
 					including manicures, pedicures, acrylics, gels, and nail art. Familiar with a variety of applications for improving the appearance 
 					of nails and the best filling and polishing techniques to enhance the appearance of both your hands and feet.`}
 			/>
